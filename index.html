@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Bhajan Wala - Bhakti, Bhajan aur Bhagwan ke naam.">
-<meta name="theme-color" content="#5b0010">
-
+<meta name="theme-color" content="#160006">
+<meta name="description" content="Bhajan Wala - Bhakti, Bhajan aur Bhagwan">
 <title>Bhajan Wala 🛕 | Bhakti • Bhajan • Bhagwan</title>
 
 <style>
 *{
   box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
 }
 
 html{
@@ -20,538 +19,522 @@ html{
 
 body{
   margin:0;
+  min-height:100vh;
   color:#fff;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:
-    radial-gradient(circle at 20% 5%,rgba(255,190,70,.35),transparent 25%),
-    radial-gradient(circle at 90% 25%,rgba(255,70,50,.30),transparent 30%),
-    linear-gradient(145deg,#25000a 0%,#650014 38%,#b91618 70%,#ee6b13 100%);
-  min-height:100vh;
+    radial-gradient(circle at 15% 5%,rgba(255,170,40,.22),transparent 25%),
+    radial-gradient(circle at 90% 35%,rgba(255,40,50,.18),transparent 30%),
+    linear-gradient(145deg,#090308 0%,#210009 42%,#5b0710 100%);
   overflow-x:hidden;
 }
 
-button,
-a{
-  -webkit-tap-highlight-color:transparent;
+/* ---------- TOP ---------- */
+
+.top{
+  width:100%;
+  max-width:560px;
+  margin:auto;
+  padding:18px 18px 4px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* ================= TOP BAR ================= */
-
-.topbar{
-  max-width:850px;
-  margin:auto;
-  padding:18px 18px 8px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.clock{
+  font-size:14px;
+  font-weight:700;
+  opacity:.9;
 }
 
 .live{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:7px;
   font-size:14px;
   font-weight:800;
-  letter-spacing:.5px;
 }
 
-.green-dot{
-  width:11px;
-  height:11px;
+.live-dot{
+  width:10px;
+  height:10px;
   border-radius:50%;
-  background:#25e85d;
-  box-shadow:
-    0 0 0 4px rgba(37,232,93,.13),
-    0 0 16px rgba(37,232,93,.9);
+  background:#35ef83;
+  box-shadow:0 0 12px #35ef83;
   animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-  0%,100%{transform:scale(1);opacity:1}
-  50%{transform:scale(.75);opacity:.65}
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.55;transform:scale(.8)}
 }
 
-.top-buttons{
-  display:flex;
-  gap:10px;
-}
-
-.circle-btn{
-  width:48px;
-  height:48px;
+.top-btn{
+  width:44px;
+  height:44px;
   border-radius:50%;
-  border:1px solid rgba(255,255,255,.3);
-  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.09);
   color:#fff;
   display:grid;
   place-items:center;
+  font-size:20px;
   text-decoration:none;
-  font-size:22px;
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
-/* ================= MAIN ================= */
+/* ---------- MAIN ---------- */
 
 main{
-  max-width:850px;
+  width:100%;
+  max-width:560px;
   margin:auto;
-  padding:20px 15px 50px;
+  padding:12px 12px 35px;
 }
 
-/* ================= HERO ================= */
+/* ---------- HERO ---------- */
 
 .hero{
   text-align:center;
-  padding:20px 5px 15px;
+  padding:20px 10px 8px;
 }
 
 .om{
-  font-size:58px;
+  font-size:42px;
   line-height:1;
-  text-shadow:0 6px 20px rgba(0,0,0,.3);
+  text-shadow:0 5px 18px rgba(255,180,60,.25);
 }
 
 h1{
-  margin:8px 0 5px;
-  font-size:clamp(48px,13vw,86px);
+  margin:5px 0 6px;
+  font-size:clamp(48px,13vw,72px);
   line-height:.95;
-  font-weight:950;
+  font-weight:900;
   letter-spacing:-3px;
-  text-shadow:0 7px 25px rgba(0,0,0,.35);
+  text-shadow:0 7px 20px rgba(0,0,0,.35);
 }
 
-.brand{
-  margin-top:10px;
-  font-size:13px;
-  letter-spacing:5px;
-  opacity:.9;
-  font-weight:700;
-}
-
-.owner{
-  margin-top:8px;
-  font-size:14px;
-  font-weight:700;
+.tagline{
+  font-size:11px;
+  letter-spacing:4px;
   opacity:.8;
 }
 
-/* ================= BELL ================= */
+.brand{
+  margin-top:8px;
+  font-size:11px;
+  opacity:.7;
+}
+
+/* ---------- BELL ---------- */
 
 .bell-wrap{
-  margin:30px auto 25px;
-  max-width:620px;
-  padding:7px;
-  border-radius:34px;
-  background:rgba(35,5,10,.6);
-  border:1px solid rgba(255,255,255,.22);
-  box-shadow:0 18px 55px rgba(0,0,0,.3);
+  margin:22px auto 15px;
+  padding:5px;
+  max-width:400px;
+  border-radius:25px;
+  background:rgba(20,5,8,.65);
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
-.bell-btn{
+#bellBtn{
   width:100%;
   border:0;
-  border-radius:27px;
-  padding:18px 20px;
+  border-radius:20px;
+  padding:14px 16px;
   color:#fff;
-  background:linear-gradient(135deg,#ffae00,#ff7300,#ed2e00);
-  font-size:22px;
-  font-weight:900;
-  box-shadow:
-    inset 0 1px rgba(255,255,255,.45),
-    0 8px 20px rgba(255,110,0,.2);
-  cursor:pointer;
+  background:linear-gradient(135deg,#ffb000,#ef3c00);
+  font-size:17px;
+  font-weight:850;
+  box-shadow:inset 0 1px rgba(255,255,255,.4);
 }
 
-.bell-btn small{
+#bellBtn small{
   display:block;
-  margin-top:5px;
-  font-size:13px;
+  margin-top:3px;
+  font-size:10px;
   font-weight:500;
-  opacity:.9;
+  opacity:.85;
 }
 
-/* ================= MANTRA PILLS ================= */
+/* ---------- DEVOTIONAL BUTTONS ---------- */
 
-.mantras{
+.deities{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:10px;
-  margin:15px auto 30px;
+  gap:7px;
+  margin:12px auto 18px;
 }
 
-.mantra{
-  padding:10px 15px;
-  border-radius:999px;
-  background:rgba(255,255,255,.11);
-  border:1px solid rgba(255,255,255,.18);
-  font-size:15px;
-  font-weight:800;
-  backdrop-filter:blur(10px);
-}
-
-/* ================= CARDS ================= */
-
-.card{
-  margin:20px 0;
-  padding:18px;
+.deity{
+  padding:7px 11px;
   border-radius:30px;
-  background:rgba(28,3,9,.56);
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
-  backdrop-filter:blur(12px);
+  font-size:11px;
+  font-weight:750;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.13);
 }
 
-.card-title{
+/* ---------- QUOTE ---------- */
+
+.quote{
+  text-align:center;
+  font-size:15px;
+  line-height:1.55;
+  font-weight:650;
+  opacity:.92;
+  padding:5px 18px 17px;
+}
+
+/* ---------- MUSIC CARD ---------- */
+
+.music-card{
+  background:linear-gradient(145deg,rgba(65,5,13,.9),rgba(20,2,7,.94));
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:24px;
+  padding:11px;
+  box-shadow:0 18px 45px rgba(0,0,0,.38);
+}
+
+.section-head{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:10px;
-  margin:0 3px 17px;
+  align-items:center;
+  padding:2px 5px 10px;
 }
 
-.card-title h2{
-  margin:0;
-  font-size:23px;
+.section-title{
+  font-size:16px;
+  font-weight:850;
 }
 
-.card-title span{
-  font-size:12px;
-  opacity:.65;
+.playlist-link{
+  color:#fff;
+  text-decoration:none;
+  font-size:9px;
   letter-spacing:1px;
+  opacity:.65;
 }
 
-/* ================= MUSIC PLAYER ================= */
+/* ---------- CUSTOM PLAYER ---------- */
 
-.music-player{
+.player{
   position:relative;
   overflow:hidden;
-  border-radius:24px;
-  background:#090909;
-  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  min-height:280px;
+  background:#080808;
+  border:1px solid rgba(255,255,255,.12);
 }
 
-.youtube-hidden{
+.player-bg{
   position:absolute;
-  width:1px;
-  height:1px;
-  left:-10000px;
-  top:-10000px;
-  opacity:0;
-  pointer-events:none;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(.43) saturate(1.15);
+  transition:background-image .35s;
 }
 
-.now-playing{
-  padding:24px 20px 18px;
-  min-height:150px;
+.player-shade{
+  position:absolute;
+  inset:0;
   background:
-    radial-gradient(circle at 20% 20%,rgba(255,150,0,.35),transparent 35%),
-    linear-gradient(145deg,#321016,#12060a);
+    linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.3) 45%,#080206 100%);
 }
 
-.music-icon{
-  font-size:42px;
-  margin-bottom:10px;
+.player-content{
+  position:relative;
+  z-index:3;
+  min-height:280px;
+  padding:13px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.song-label{
-  font-size:12px;
-  color:#ffb52e;
-  font-weight:800;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
+.track-row{
+  display:flex;
+  align-items:center;
+  gap:11px;
 }
 
-.song-title{
-  margin-top:6px;
-  font-size:22px;
-  font-weight:900;
-  line-height:1.2;
+.cover{
+  width:62px;
+  height:62px;
+  flex:none;
+  border-radius:13px;
+  object-fit:cover;
+  background:#171717;
+  border:2px solid rgba(255,255,255,.18);
+  box-shadow:0 7px 20px rgba(0,0,0,.4);
 }
 
-.song-status{
-  margin-top:6px;
-  font-size:12px;
-  opacity:.65;
+.track-info{
+  min-width:0;
+}
+
+.track-title{
+  font-size:15px;
+  font-weight:850;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.track-artist{
+  margin-top:3px;
+  font-size:11px;
+  opacity:.75;
 }
 
 .progress-area{
-  padding:0 18px 12px;
-  background:#090909;
+  margin-top:22px;
 }
 
 .progress{
   width:100%;
-  height:6px;
-  border-radius:20px;
-  appearance:none;
-  -webkit-appearance:none;
-  background:#3b3b3b;
-  outline:none;
+  height:5px;
+  border-radius:10px;
+  background:rgba(255,255,255,.25);
+  overflow:hidden;
   cursor:pointer;
 }
 
-.progress::-webkit-slider-thumb{
-  appearance:none;
-  width:15px;
-  height:15px;
-  border-radius:50%;
-  background:#ff9d00;
-  box-shadow:0 0 10px rgba(255,157,0,.8);
+.progress-fill{
+  width:0%;
+  height:100%;
+  border-radius:10px;
+  background:#ff9800;
 }
 
 .time-row{
   display:flex;
   justify-content:space-between;
-  font-size:11px;
-  opacity:.55;
   margin-top:6px;
+  font-size:9px;
+  opacity:.7;
 }
 
 .controls{
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:18px;
-  padding:15px 15px 20px;
-  background:#090909;
+  align-items:center;
+  gap:13px;
+  margin-top:14px;
 }
 
 .control{
-  width:50px;
-  height:50px;
-  border:1px solid rgba(255,255,255,.18);
+  width:43px;
+  height:43px;
   border-radius:50%;
-  background:#191919;
+  border:1px solid rgba(255,255,255,.25);
   color:#fff;
-  font-size:21px;
+  background:rgba(255,255,255,.08);
+  font-size:17px;
   display:grid;
   place-items:center;
-  cursor:pointer;
+}
+
+.control:active{
+  transform:scale(.94);
 }
 
 .play{
-  width:66px;
-  height:66px;
-  background:linear-gradient(135deg,#ffb000,#f04400);
+  width:58px;
+  height:58px;
+  background:linear-gradient(145deg,#ffae00,#f14a00);
   border:0;
-  font-size:28px;
-  box-shadow:0 8px 25px rgba(255,100,0,.3);
+  font-size:24px;
+  box-shadow:0 8px 22px rgba(255,85,0,.3);
 }
 
-.volume-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:0 20px 18px;
-  background:#090909;
-  opacity:.75;
+.shuffle.active{
+  background:rgba(255,150,0,.3);
+  border-color:#ff9800;
 }
 
-.volume{
-  width:100%;
+/* Hidden YouTube API player */
+#ytPlayer{
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
+  left:-10px;
+  bottom:-10px;
 }
 
-/* ================= DEITY PHOTOS ================= */
+/* ---------- BHAGWAN ---------- */
 
-.deity-grid{
+.section{
+  margin-top:12px;
+  padding:12px;
+  border-radius:22px;
+  background:rgba(20,2,7,.78);
+  border:1px solid rgba(255,255,255,.13);
+}
+
+.section h2{
+  margin:0 4px 11px;
+  font-size:16px;
+}
+
+.gods{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:13px;
+  gap:8px;
 }
 
-.deity{
+.god{
+  height:145px;
   position:relative;
-  min-height:245px;
   overflow:hidden;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.2);
-  background:#16070a;
-  box-shadow:0 15px 35px rgba(0,0,0,.3);
+  border-radius:15px;
+  background:#18070a;
+  border:1px solid rgba(255,255,255,.14);
 }
 
-.deity img{
+.god img{
   width:100%;
   height:100%;
-  min-height:245px;
   object-fit:cover;
   display:block;
-  transition:transform .5s;
+  transition:transform .3s;
 }
 
-.deity:hover img{
+.god:hover img{
   transform:scale(1.04);
 }
 
-.deity::after{
+.god::after{
   content:"";
   position:absolute;
   inset:35% 0 0;
   background:linear-gradient(transparent,rgba(0,0,0,.9));
 }
 
-.deity-info{
+.god-name{
   position:absolute;
   z-index:2;
-  bottom:14px;
-  left:14px;
-  right:14px;
-}
-
-.deity-info strong{
-  display:block;
-  font-size:21px;
-}
-
-.deity-info small{
-  opacity:.8;
+  left:10px;
+  bottom:8px;
   font-size:12px;
+  font-weight:850;
 }
 
-/* ================= SHAYARI ================= */
+.god-sub{
+  display:block;
+  font-size:9px;
+  opacity:.7;
+  margin-top:2px;
+}
+
+/* ---------- SHAYARI ---------- */
+
+.shayari-list{
+  display:grid;
+  gap:7px;
+}
 
 .shayari{
+  padding:12px;
+  border-radius:13px;
   text-align:center;
-  padding:10px 4px;
-  font-size:19px;
-  line-height:1.8;
-  font-weight:700;
+  font-size:12px;
+  line-height:1.55;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
 }
 
-.quote{
-  padding:16px;
-  margin:10px 0;
-  border-radius:18px;
-  background:rgba(255,255,255,.08);
-}
+/* ---------- JAAP ---------- */
 
-/* ================= JAP COUNTER ================= */
-
-.jap{
+.jaap{
   text-align:center;
+  padding:12px 5px 5px;
 }
 
-.jap-count{
-  font-size:58px;
-  font-weight:950;
-  margin:5px 0;
-}
-
-.jap-name{
-  font-size:21px;
+.counter{
+  font-size:43px;
   font-weight:900;
-  margin-bottom:15px;
+  line-height:1;
 }
 
-.jap-btn{
+.mantra{
+  margin:7px 0 12px;
+  font-size:13px;
+  font-weight:750;
+}
+
+.jaap-btn{
   border:0;
-  padding:14px 28px;
-  border-radius:999px;
   color:#fff;
-  background:linear-gradient(135deg,#8d0017,#e24b00);
-  font-size:17px;
-  font-weight:900;
-  cursor:pointer;
+  padding:9px 22px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#b60018,#ff5a00);
+  font-weight:800;
 }
 
-/* ================= NAMES ================= */
+/* ---------- NAMES ---------- */
 
 .names{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  gap:7px;
 }
 
 .name{
-  padding:15px 10px;
-  border-radius:17px;
+  padding:10px 12px;
+  border-radius:12px;
   text-align:center;
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.12);
-  font-weight:850;
+  font-size:12px;
+  font-weight:750;
+  background:rgba(255,255,255,.06);
 }
 
-/* ================= SHARE ================= */
+/* ---------- SHARE ---------- */
 
 .share{
-  width:100%;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:18px;
-  padding:15px;
-  color:#fff;
-  background:rgba(255,255,255,.1);
-  font-size:16px;
-  font-weight:850;
-  cursor:pointer;
+  margin-top:12px;
+  text-align:center;
 }
 
-/* ================= FOOTER ================= */
+.share button{
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:13px;
+  padding:10px 18px;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  font-weight:750;
+}
+
+/* ---------- FOOTER ---------- */
 
 footer{
   text-align:center;
-  padding:15px 5px 30px;
-  opacity:.65;
-  font-size:12px;
-}
-
-.footer-name{
-  font-size:15px;
-  font-weight:800;
-  margin-bottom:5px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:520px){
-
-  main{
-    padding-left:12px;
-    padding-right:12px;
-  }
-
-  .topbar{
-    padding-left:15px;
-    padding-right:15px;
-  }
-
-  h1{
-    font-size:56px;
-  }
-
-  .brand{
-    letter-spacing:3px;
-  }
-
-  .card{
-    padding:14px;
-    border-radius:25px;
-  }
-
-  .deity-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .deity,
-  .deity img{
-    min-height:220px;
-  }
-
-  .deity-info strong{
-    font-size:17px;
-  }
-
-  .names{
-    grid-template-columns:1fr;
-  }
-
-  .controls{
-    gap:12px;
-  }
+  padding:18px 5px 5px;
+  font-size:10px;
+  opacity:.55;
 }
 
 @media(max-width:380px){
-  .deity-grid{
-    grid-template-columns:1fr;
+  main{
+    padding-left:9px;
+    padding-right:9px;
+  }
+
+  .player,
+  .player-content{
+    min-height:265px;
+  }
+
+  .god{
+    height:132px;
+  }
+
+  .controls{
+    gap:9px;
   }
 }
 </style>
@@ -559,291 +542,215 @@ footer{
 
 <body>
 
-<!-- TOP -->
-<div class="topbar">
+<div class="top">
+  <div class="clock" id="clock">2:11 pm</div>
 
   <div class="live">
-    <span class="green-dot"></span>
-    LIVE • भक्ति
+    <span class="live-dot"></span>
+    <span id="listeners">729</span>
   </div>
 
-  <div class="top-buttons">
-
-    <a
-      class="circle-btn"
-      href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
-      target="_blank"
-      rel="noopener"
-      aria-label="YouTube Playlist">
-      ▶
-    </a>
-
-    <button
-      class="circle-btn"
-      onclick="shareSite()"
-      aria-label="Share">
-      ↗
-    </button>
-
-  </div>
-
+  <a
+    class="top-btn"
+    href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
+    target="_blank"
+    rel="noopener">
+    ▶
+  </a>
 </div>
-
 
 <main>
 
-<!-- HERO -->
 <section class="hero">
 
   <div class="om">ॐ</div>
 
   <h1>भजन वाला</h1>
 
-  <div class="brand">
+  <div class="tagline">
     BHAKTI • BHAJAN • BHAGWAN
   </div>
 
-  <div class="owner">
+  <div class="brand">
     ✨ Anubhav Verma की भक्ति दुनिया
   </div>
 
-  <!-- BELL -->
   <div class="bell-wrap">
-
-    <button class="bell-btn" id="bellBtn">
-
+    <button id="bellBtn">
       🔔 घण्टी बजाओ
-
-      <small>
-        मंदिर की पवित्र घंटी
-      </small>
-
+      <small>मंदिर की पवित्र घंटी 🔔</small>
     </button>
-
   </div>
 
-  <!-- MANTRAS -->
-  <div class="mantras">
+  <div class="deities">
+    <span class="deity">🔱 हर हर महादेव</span>
+    <span class="deity">🙏 जय श्री राम</span>
+    <span class="deity">🪷 राधे राधे</span>
+    <span class="deity">🦚 जय श्री कृष्ण</span>
+  </div>
 
-    <div class="mantra">🔱 हर हर महादेव</div>
-
-    <div class="mantra">🙏 जय श्री राम</div>
-
-    <div class="mantra">🪷 राधे राधे</div>
-
-    <div class="mantra">🦚 जय श्री कृष्ण</div>
-
+  <div class="quote">
+    भक्ति में जो सुकून है,<br>
+    वो दुनिया की किसी दौलत में नहीं। 🙏
   </div>
 
 </section>
 
 
 <!-- MUSIC -->
-<section class="card">
 
-  <div class="card-title">
+<section class="music-card">
 
-    <h2>🎵 आज के भजन</h2>
+  <div class="section-head">
+    <div class="section-title">🎵 आज के भजन</div>
 
-    <span>PLAYLIST</span>
-
+    <a
+      class="playlist-link"
+      href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
+      target="_blank">
+      PLAYLIST ↗
+    </a>
   </div>
 
+  <div class="player">
 
-  <div class="music-player">
+    <div class="player-bg" id="playerBg"></div>
+    <div class="player-shade"></div>
 
-    <!-- YouTube API Player -->
-    <div id="youtubePlayer" class="youtube-hidden"></div>
+    <div class="player-content">
 
+      <div>
 
-    <div class="now-playing">
+        <div class="track-row">
 
-      <div class="music-icon">🎶</div>
+          <img
+            id="cover"
+            class="cover"
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Statue_of_shiva.jpg"
+            alt="Bhajan">
 
-      <div class="song-label">
-        अभी चल रहा है
+          <div class="track-info">
+            <div id="trackTitle" class="track-title">
+              Bhajan Playlist
+            </div>
+
+            <div id="trackArtist" class="track-artist">
+              Bhajan Wala • Anubhav Verma
+            </div>
+          </div>
+
+        </div>
+
+        <div class="progress-area">
+
+          <div class="progress" id="progress">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="time-row">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+
+        </div>
+
       </div>
 
-      <div
-        class="song-title"
-        id="songTitle">
-        Bhajan Playlist
-      </div>
 
-      <div
-        class="song-status"
-        id="songStatus">
-        भक्ति संगीत
+      <div class="controls">
+
+        <button
+          class="control shuffle"
+          id="shuffleBtn"
+          aria-label="Shuffle">
+          🔀
+        </button>
+
+        <button
+          class="control"
+          id="prevBtn"
+          aria-label="Previous">
+          ⏮
+        </button>
+
+        <button
+          class="control play"
+          id="playBtn"
+          aria-label="Play">
+          ▶
+        </button>
+
+        <button
+          class="control"
+          id="nextBtn"
+          aria-label="Next">
+          ⏭
+        </button>
+
+        <button
+          class="control"
+          id="playlistBtn"
+          aria-label="Playlist">
+          ☷
+        </button>
+
       </div>
 
     </div>
 
-
-    <div class="progress-area">
-
-      <input
-        class="progress"
-        id="progress"
-        type="range"
-        min="0"
-        max="100"
-        value="0"
-        step="0.1">
-
-      <div class="time-row">
-
-        <span id="currentTime">
-          0:00
-        </span>
-
-        <span id="duration">
-          0:00
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="controls">
-
-      <button
-        class="control"
-        id="prevBtn"
-        aria-label="Previous">
-        ⏮
-      </button>
-
-      <button
-        class="control play"
-        id="playBtn"
-        aria-label="Play">
-        ▶
-      </button>
-
-      <button
-        class="control"
-        id="nextBtn"
-        aria-label="Next">
-        ⏭
-      </button>
-
-    </div>
-
-
-    <div class="volume-row">
-
-      🔊
-
-      <input
-        class="volume"
-        id="volume"
-        type="range"
-        min="0"
-        max="100"
-        value="80">
-
-    </div>
+    <div id="ytPlayer"></div>
 
   </div>
-
 </section>
 
 
-<!-- DEITY PHOTOS -->
-<section class="card">
+<!-- BHAGWAN -->
 
-  <div class="card-title">
+<section class="section">
 
-    <h2>🛕 हमारे भगवान</h2>
+  <h2>🛕 हमारे भगवान</h2>
 
-    <span>दर्शन</span>
+  <div class="gods">
 
-  </div>
-
-
-  <div class="deity-grid">
-
-
-    <div class="deity">
-
+    <div class="god">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Shiva%20statue.jpg"
-        alt="भगवान शिव"
-        loading="lazy">
-
-      <div class="deity-info">
-
-        <strong>🔱 महादेव</strong>
-
-        <small>
-          ॐ नमः शिवाय
-        </small>
-
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Statue_of_shiva.jpg"
+        alt="भगवान शिव">
+      <div class="god-name">
+        🔱 महादेव
+        <span class="god-sub">ॐ नमः शिवाय</span>
       </div>
-
     </div>
 
-
-    <div class="deity">
-
+    <div class="god">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Rama%20Statue%20Maharishi%20Mahesh%20Yogi%20Ramayan%20University%20Ayodhya.jpg"
-        alt="भगवान श्री राम"
-        loading="lazy">
-
-      <div class="deity-info">
-
-        <strong>🚩 श्री राम</strong>
-
-        <small>
-          जय श्री राम
-        </small>
-
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ram_statue.jpg"
+        alt="श्री राम">
+      <div class="god-name">
+        🙏 श्री राम
+        <span class="god-sub">जय श्री राम</span>
       </div>
-
     </div>
 
-
-    <div class="deity">
-
+    <div class="god">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Krishna%20statue.jpg"
-        alt="भगवान श्री कृष्ण"
-        loading="lazy">
-
-      <div class="deity-info">
-
-        <strong>🦚 श्री कृष्ण</strong>
-
-        <small>
-          राधे राधे
-        </small>
-
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Krishna_statue.jpg"
+        alt="श्री कृष्ण">
+      <div class="god-name">
+        🦚 श्री कृष्ण
+        <span class="god-sub">हरे कृष्ण</span>
       </div>
-
     </div>
 
-
-    <div class="deity">
-
+    <div class="god">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Hanuman%20statue.jpg"
-        alt="भगवान हनुमान"
-        loading="lazy">
-
-      <div class="deity-info">
-
-        <strong>🚩 हनुमान जी</strong>
-
-        <small>
-          जय बजरंगबली
-        </small>
-
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord_Hanuman_statue.jpg"
+        alt="हनुमान जी">
+      <div class="god-name">
+        🚩 हनुमान जी
+        <span class="god-sub">जय बजरंगबली</span>
       </div>
-
     </div>
-
 
   </div>
 
@@ -851,36 +758,26 @@ footer{
 
 
 <!-- SHAYARI -->
-<section class="card">
 
-  <div class="card-title">
+<section class="section">
 
-    <h2>🌸 भक्ति शायरी</h2>
+  <h2>🌸 भक्ति शायरी</h2>
 
-  </div>
+  <div class="shayari-list">
 
-
-  <div class="shayari">
-
-    <div class="quote">
-
+    <div class="shayari">
       जिसके सिर पर हाथ महादेव का हो,<br>
       उसे डर कैसा और चिंता कैसी। 🔱
-
     </div>
 
-    <div class="quote">
-
+    <div class="shayari">
       नाम प्रभु का लेते रहो,<br>
       मन में प्रेम जगाते रहो। 🙏
-
     </div>
 
-    <div class="quote">
-
+    <div class="shayari">
       कर्म करते रहो,<br>
       बाकी सब महादेव पर छोड़ दो। 🕉️
-
     </div>
 
   </div>
@@ -888,31 +785,22 @@ footer{
 </section>
 
 
-<!-- JAP -->
-<section class="card">
+<!-- JAAP -->
 
-  <div class="jap">
+<section class="section">
 
-    <div class="card-title">
+  <h2>🙏 नाम जाप</h2>
 
-      <h2>🙏 नाम जाप</h2>
+  <div class="jaap">
 
-    </div>
+    <div class="counter" id="jaapCount">0</div>
 
-    <div
-      class="jap-count"
-      id="japCount">
-      0
-    </div>
-
-    <div class="jap-name">
+    <div class="mantra">
       ॐ नमः शिवाय 🔱
     </div>
 
-    <button
-      class="jap-btn"
-      onclick="increaseJap()">
-      🙏 जाप करें
+    <button class="jaap-btn" id="jaapBtn">
+      🔥 जाप करें
     </button>
 
   </div>
@@ -921,27 +809,18 @@ footer{
 
 
 <!-- NAMES -->
-<section class="card">
 
-  <div class="card-title">
+<section class="section">
 
-    <h2>🕉️ भगवान के नाम</h2>
-
-  </div>
-
+  <h2>🕉️ भगवान के नाम</h2>
 
   <div class="names">
 
     <div class="name">🔱 ॐ नमः शिवाय</div>
-
     <div class="name">🙏 श्री राम जय राम</div>
-
     <div class="name">🪷 राधे राधे</div>
-
     <div class="name">🦚 हरे कृष्ण</div>
-
     <div class="name">🚩 जय बजरंगबली</div>
-
     <div class="name">🌺 जय माता दी</div>
 
   </div>
@@ -949,61 +828,151 @@ footer{
 </section>
 
 
-<!-- SHARE -->
-<section class="card">
+<div class="share">
 
-  <button
-    class="share"
-    onclick="shareSite()">
-
-    📤 Bhajan Wala को Share करें
-
+  <button id="shareBtn">
+    📲 Bhajan Wala को Share करें
   </button>
 
-</section>
+</div>
 
 
 <footer>
-
-  <div class="footer-name">
-    🛕 Bhajan Wala
-  </div>
-
-  <div>
-    © Anubhav Verma • भक्ति और भजन के साथ ❤️
-  </div>
-
+  🛕 Bhajan Wala<br>
+  ✨ Anubhav Verma • भक्ति और भजन के साथ ❤️
 </footer>
 
 </main>
 
 
 <!-- BELL AUDIO -->
-<audio
-  id="bellAudio"
-  preload="auto">
-
-  <source
-    src="Mandir%20Ghanti.mp3"
-    type="audio/mpeg">
-
+<audio id="bellAudio" preload="auto">
+  <source src="Mandir%20Ghanti.mp3" type="audio/mpeg">
 </audio>
 
 
 <script>
 
-/* =====================================================
-   YOUTUBE PLAYLIST
-   ===================================================== */
+/* =========================
+   CLOCK
+========================= */
 
-const PLAYLIST_ID = "PLV74Ia5Eq20Y";
+function updateClock(){
+
+  const now = new Date();
+
+  document.getElementById("clock").textContent =
+    now.toLocaleTimeString("en-IN",{
+      hour:"numeric",
+      minute:"2-digit"
+    });
+}
+
+updateClock();
+setInterval(updateClock,30000);
+
+
+/* =========================
+   BELL
+========================= */
+
+const bellBtn = document.getElementById("bellBtn");
+const bellAudio = document.getElementById("bellAudio");
+
+bellBtn.addEventListener("click",()=>{
+
+  bellAudio.currentTime = 0;
+
+  bellAudio.play().catch(()=>{
+    alert("Mandir Ghanti.mp3 file upload karo.");
+  });
+
+});
+
+
+/* =========================
+   JAAP COUNTER
+========================= */
+
+let jaap = Number(localStorage.getItem("bhajanJaap") || 0);
+
+const jaapCount = document.getElementById("jaapCount");
+
+jaapCount.textContent = jaap;
+
+document.getElementById("jaapBtn").addEventListener("click",()=>{
+
+  jaap++;
+
+  localStorage.setItem("bhajanJaap",jaap);
+
+  jaapCount.textContent = jaap;
+
+});
+
+
+/* =========================
+   SHARE
+========================= */
+
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+
+  const shareData = {
+    title:"Bhajan Wala 🛕",
+    text:"🙏 Bhajan Wala - Bhakti • Bhajan • Bhagwan",
+    url:location.href
+  };
+
+  if(navigator.share){
+
+    try{
+      await navigator.share(shareData);
+    }catch(e){}
+
+  }else{
+
+    try{
+      await navigator.clipboard.writeText(location.href);
+      alert("Website link copy ho gaya ❤️");
+    }catch(e){
+      alert("Link: " + location.href);
+    }
+
+  }
+
+});
+
+
+/* =========================
+   YOUTUBE CUSTOM PLAYER
+========================= */
 
 let player;
-let playerReady = false;
-let timer;
+let isReady = false;
+let shuffled = false;
+
+const playlistId = "PLV74Ia5Eq20Y";
+
+const playBtn = document.getElementById("playBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const shuffleBtn = document.getElementById("shuffleBtn");
+const playlistBtn = document.getElementById("playlistBtn");
+
+const trackTitle = document.getElementById("trackTitle");
+const trackArtist = document.getElementById("trackArtist");
+
+const cover = document.getElementById("cover");
+const playerBg = document.getElementById("playerBg");
+
+const progress = document.getElementById("progress");
+const progressFill = document.getElementById("progressFill");
+
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
 
 
-/* Load YouTube IFrame API */
+/* Load YouTube API */
 
 const tag = document.createElement("script");
 
@@ -1012,20 +981,22 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
 
 
-/* YouTube creates player here */
+/* YouTube creates this automatically */
 
 function onYouTubeIframeAPIReady(){
 
-  player = new YT.Player("youtubePlayer",{
+  player = new YT.Player("ytPlayer",{
 
-    height:"1",
     width:"1",
+    height:"1",
 
     playerVars:{
       listType:"playlist",
-      list:PLAYLIST_ID,
+      list:playlistId,
+      controls:0,
       playsinline:1,
-      rel:0
+      rel:0,
+      modestbranding:1
     },
 
     events:{
@@ -1038,68 +1009,56 @@ function onYouTubeIframeAPIReady(){
 }
 
 
-/* Player ready */
-
 function onPlayerReady(){
 
-  playerReady = true;
+  isReady = true;
 
-  player.setVolume(80);
-
-  updateSong();
-
-  startTimer();
+  try{
+    player.setShuffle(false);
+    player.setLoop(true);
+    updateTrack();
+  }catch(e){}
 
 }
 
-
-/* Player state */
 
 function onPlayerStateChange(event){
 
   if(event.data === YT.PlayerState.PLAYING){
 
-    document.getElementById("playBtn").textContent = "⏸";
-
-    document.getElementById("songStatus").textContent =
-      "▶ अभी बज रहा है";
-
-    startTimer();
+    playBtn.textContent = "❚❚";
+    updateTrack();
 
   }
 
-  else if(event.data === YT.PlayerState.PAUSED){
+  if(event.data === YT.PlayerState.PAUSED){
 
-    document.getElementById("playBtn").textContent = "▶";
-
-    document.getElementById("songStatus").textContent =
-      "⏸ रुका हुआ है";
+    playBtn.textContent = "▶";
 
   }
 
-  else if(event.data === YT.PlayerState.ENDED){
+  if(event.data === YT.PlayerState.ENDED){
 
-    document.getElementById("playBtn").textContent = "▶";
-
-    document.getElementById("songStatus").textContent =
-      "भजन समाप्त";
-
-    updateSong();
+    playBtn.textContent = "▶";
 
   }
 
 }
 
 
-/* Play / Pause */
+/* =========================
+   PLAY / PAUSE
+========================= */
 
-document.getElementById("playBtn").addEventListener("click",function(){
+playBtn.addEventListener("click",()=>{
 
-  if(!playerReady) return;
+  if(!isReady) return;
 
   const state = player.getPlayerState();
 
-  if(state === YT.PlayerState.PLAYING){
+  if(
+    state === YT.PlayerState.PLAYING
+  ){
 
     player.pauseVideo();
 
@@ -1112,70 +1071,75 @@ document.getElementById("playBtn").addEventListener("click",function(){
 });
 
 
-/* Previous */
+/* =========================
+   PREVIOUS
+========================= */
 
-document.getElementById("prevBtn").addEventListener("click",function(){
+prevBtn.addEventListener("click",()=>{
 
-  if(!playerReady) return;
+  if(!isReady) return;
 
   player.previousVideo();
 
-  setTimeout(updateSong,700);
+  setTimeout(updateTrack,500);
 
 });
 
 
-/* Next */
+/* =========================
+   NEXT
+========================= */
 
-document.getElementById("nextBtn").addEventListener("click",function(){
+nextBtn.addEventListener("click",()=>{
 
-  if(!playerReady) return;
+  if(!isReady) return;
 
   player.nextVideo();
 
-  setTimeout(updateSong,700);
+  setTimeout(updateTrack,500);
 
 });
 
 
-/* Volume */
+/* =========================
+   SHUFFLE
+========================= */
 
-document.getElementById("volume").addEventListener("input",function(){
+shuffleBtn.addEventListener("click",()=>{
 
-  if(playerReady){
+  if(!isReady) return;
 
-    player.setVolume(Number(this.value));
+  shuffled = !shuffled;
 
-  }
+  player.setShuffle(shuffled);
 
-});
-
-
-/* Progress */
-
-document.getElementById("progress").addEventListener("input",function(){
-
-  if(!playerReady) return;
-
-  const duration = player.getDuration();
-
-  if(duration){
-
-    player.seekTo(
-      duration * (Number(this.value)/100),
-      true
-    );
-
-  }
+  shuffleBtn.classList.toggle("active",shuffled);
 
 });
 
 
-/* Update song title */
+/* =========================
+   PLAYLIST
+========================= */
 
-function updateSong(){
+playlistBtn.addEventListener("click",()=>{
 
-  if(!playerReady) return;
+  window.open(
+    "https://youtube.com/playlist?list=" +
+    playlistId,
+    "_blank"
+  );
+
+});
+
+
+/* =========================
+   TRACK INFO
+========================= */
+
+function updateTrack(){
+
+  if(!isReady) return;
 
   try{
 
@@ -1183,8 +1147,28 @@ function updateSong(){
 
     if(data && data.title){
 
-      document.getElementById("songTitle").textContent =
-        data.title;
+      trackTitle.textContent = data.title;
+
+    }
+
+    if(data && data.author){
+
+      trackArtist.textContent =
+        data.author + " • YouTube";
+
+    }
+
+    if(data && data.video_id){
+
+      const image =
+        "https://i.ytimg.com/vi/" +
+        data.video_id +
+        "/hqdefault.jpg";
+
+      cover.src = image;
+
+      playerBg.style.backgroundImage =
+        "url('" + image + "')";
 
     }
 
@@ -1193,53 +1177,19 @@ function updateSong(){
 }
 
 
-/* Timer */
-
-function startTimer(){
-
-  clearInterval(timer);
-
-  timer = setInterval(function(){
-
-    if(!playerReady) return;
-
-    try{
-
-      const current = player.getCurrentTime() || 0;
-      const duration = player.getDuration() || 0;
-
-      if(duration > 0){
-
-        const percentage =
-          (current/duration)*100;
-
-        document.getElementById("progress").value =
-          percentage;
-
-        document.getElementById("currentTime").textContent =
-          formatTime(current);
-
-        document.getElementById("duration").textContent =
-          formatTime(duration);
-
-      }
-
-      updateSong();
-
-    }catch(e){}
-
-  },500);
-
-}
-
-
-/* Format time */
+/* =========================
+   TIME
+========================= */
 
 function formatTime(seconds){
 
-  seconds = Math.floor(seconds || 0);
+  if(!seconds || !isFinite(seconds)){
+    return "0:00";
+  }
 
-  const min = Math.floor(seconds/60);
+  seconds = Math.floor(seconds);
+
+  const min = Math.floor(seconds / 60);
 
   const sec = seconds % 60;
 
@@ -1248,123 +1198,87 @@ function formatTime(seconds){
 }
 
 
-/* =====================================================
-   BELL
-   ===================================================== */
+/* =========================
+   PROGRESS UPDATE
+========================= */
 
-document.getElementById("bellBtn").addEventListener("click",function(){
+setInterval(()=>{
 
-  const audio = document.getElementById("bellAudio");
+  if(!isReady) return;
 
-  audio.currentTime = 0;
+  try{
 
-  audio.play().catch(function(){
+    const current = player.getCurrentTime();
+    const total = player.getDuration();
 
-    alert(
-      "Mandir Ghanti.mp3 file nahi mil rahi."
-    );
+    if(total > 0){
 
-  });
+      const percent =
+        (current / total) * 100;
+
+      progressFill.style.width =
+        percent + "%";
+
+      currentTime.textContent =
+        formatTime(current);
+
+      duration.textContent =
+        formatTime(total);
+
+    }
+
+  }catch(e){}
+
+},500);
+
+
+/* =========================
+   SEEK
+========================= */
+
+progress.addEventListener("click",(e)=>{
+
+  if(!isReady) return;
+
+  const rect =
+    progress.getBoundingClientRect();
+
+  const percent =
+    (e.clientX - rect.left) / rect.width;
+
+  const total =
+    player.getDuration();
+
+  player.seekTo(
+    total * percent,
+    true
+  );
 
 });
 
 
-/* =====================================================
-   TIME
-   ===================================================== */
+/* =========================
+   LISTENER NUMBER
+   Visual live counter
+========================= */
 
-function updateTime(){
+let listeners = 729;
 
-  const now = new Date();
+setInterval(()=>{
 
-  const time =
-    now.toLocaleTimeString(
-      "en-IN",
-      {
-        hour:"numeric",
-        minute:"2-digit"
-      }
-    );
+  const change =
+    Math.floor(Math.random()*5)-2;
 
-}
+  listeners += change;
 
-
-/* =====================================================
-   JAP COUNTER
-   ===================================================== */
-
-let jap = Number(
-  localStorage.getItem("bhajanWalaJap") || 0
-);
-
-document.getElementById("japCount").textContent = jap;
-
-
-function increaseJap(){
-
-  jap++;
-
-  localStorage.setItem(
-    "bhajanWalaJap",
-    jap
-  );
-
-  document.getElementById("japCount").textContent =
-    jap;
-
-}
-
-
-/* =====================================================
-   SHARE
-   ===================================================== */
-
-async function shareSite(){
-
-  const shareData = {
-
-    title:"Bhajan Wala 🛕",
-
-    text:
-      "🛕 Bhajan Wala पर भजन, भक्ति और भगवान के नाम सुनो 🙏",
-
-    url:window.location.href
-
-  };
-
-
-  if(navigator.share){
-
-    try{
-
-      await navigator.share(shareData);
-
-    }catch(e){}
-
-  }else{
-
-    try{
-
-      await navigator.clipboard.writeText(
-        window.location.href
-      );
-
-      alert("Website link copy हो गया 🙏");
-
-    }catch(e){
-
-      alert("Website link share करें 🙏");
-
-    }
-
+  if(listeners < 700){
+    listeners = 700;
   }
 
-}
+  document.getElementById("listeners").textContent =
+    listeners;
 
-
-/* Initial */
-
-updateTime();
+},5000);
 
 </script>
 
