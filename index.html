@@ -473,12 +473,6 @@ main{
   pointer-events:none;
 }
 
-/*
-  This transparent layer captures taps.
-  YouTube never receives the tap,
-  so its own controls cannot interfere.
-*/
-
 .video-tap{
   position:absolute;
   inset:0;
@@ -537,6 +531,10 @@ main{
   font-size:11px;
 }
 
+/* =========================
+   FIXED CUSTOM CONTROLS
+========================= */
+
 .controls-row{
   width:100%;
 
@@ -547,6 +545,8 @@ main{
 
   align-items:center;
 
+  justify-items:center;
+
   gap:8px;
 
   margin-top:8px;
@@ -556,18 +556,24 @@ main{
   width:42px;
   height:42px;
 
-  justify-self:center;
+  padding:0;
 
   display:grid;
   place-items:center;
 
   border-radius:50%;
 
-  border:1px solid rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.22);
 
   color:#fff;
 
-  background:rgba(255,255,255,.07);
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.035) 55%,
+      rgba(0,0,0,.18)
+    );
 
   cursor:pointer;
 
@@ -575,9 +581,27 @@ main{
     inset 0 1px rgba(255,255,255,.1),
     0 5px 14px rgba(0,0,0,.2);
 
-  transition:.15s;
+  transition:
+    transform .15s ease,
+    background .15s ease,
+    border-color .15s ease;
+}
 
-  font-size:17px;
+.control-btn svg{
+  width:19px;
+  height:19px;
+
+  display:block;
+
+  fill:none;
+  stroke:currentColor;
+
+  stroke-width:2.2;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+
+  pointer-events:none;
 }
 
 .control-btn:active{
@@ -597,9 +621,26 @@ main{
     0 8px 25px rgba(255,100,0,.32);
 }
 
+.play-btn svg{
+  width:24px;
+  height:24px;
+
+  stroke-width:2.5;
+}
+
 .play-icon{
-  font-size:22px;
-  line-height:1;
+  width:24px;
+  height:24px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:0;
+}
+
+.play-icon svg{
+  width:24px;
+  height:24px;
 }
 
 .playlist-btn{
@@ -974,9 +1015,19 @@ footer{
     font-size:16px;
   }
 
+  .control-btn svg{
+    width:18px;
+    height:18px;
+  }
+
   .play-btn{
     width:53px;
     height:53px;
+  }
+
+  .play-btn svg{
+    width:23px;
+    height:23px;
   }
 
   .god-card{
@@ -1007,9 +1058,19 @@ footer{
     height:36px;
   }
 
+  .control-btn svg{
+    width:17px;
+    height:17px;
+  }
+
   .play-btn{
     width:49px;
     height:49px;
+  }
+
+  .play-btn svg{
+    width:21px;
+    height:21px;
   }
 
   .controls-row{
@@ -1205,16 +1266,26 @@ footer{
 
     <div class="controls-row">
 
+      <!-- SHUFFLE -->
+
       <button
         class="control-btn"
         id="shuffleBtn"
         type="button"
         aria-label="Shuffle">
 
-        🔀
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 7h3c4 0 5 10 9 10h6"></path>
+          <path d="M18 14l3 3-3 3"></path>
+          <path d="M3 17h3c1.8 0 2.9-1.9 4-4"></path>
+          <path d="M18 4l3 3-3 3"></path>
+          <path d="M13 7c.7-1.2 1.5-2 3-2h5"></path>
+        </svg>
 
       </button>
 
+
+      <!-- PREVIOUS -->
 
       <button
         class="control-btn"
@@ -1222,10 +1293,15 @@ footer{
         type="button"
         aria-label="Previous">
 
-        ◀
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 5v14"></path>
+          <path d="M18 6l-8 6 8 6V6z"></path>
+        </svg>
 
       </button>
 
+
+      <!-- PLAY / PAUSE -->
 
       <button
         class="control-btn play-btn"
@@ -1236,11 +1312,17 @@ footer{
         <span
           class="play-icon"
           id="playIcon">
-          ▶
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l11 7-11 7V5z"></path>
+          </svg>
+
         </span>
 
       </button>
 
+
+      <!-- NEXT -->
 
       <button
         class="control-btn"
@@ -1248,10 +1330,15 @@ footer{
         type="button"
         aria-label="Next">
 
-        ▶
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 5v14"></path>
+          <path d="M6 6l8 6-8 6V6z"></path>
+        </svg>
 
       </button>
 
+
+      <!-- PLAYLIST -->
 
       <button
         class="control-btn playlist-btn"
@@ -1259,7 +1346,12 @@ footer{
         type="button"
         aria-label="Open Playlist">
 
-        ☷
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 6h10"></path>
+          <path d="M5 11h10"></path>
+          <path d="M5 16h7"></path>
+          <path d="M17 14l4 3-4 3v-6z"></path>
+        </svg>
 
       </button>
 
@@ -1682,10 +1774,6 @@ let isShuffled = false;
 let progressTimer = null;
 
 
-/*
-  YouTube API automatically calls this.
-*/
-
 function onYouTubeIframeAPIReady(){
 
   player =
@@ -1733,10 +1821,6 @@ function onPlayerReady(event){
 
   playerReady = true;
 
-  /*
-    Get first video's information
-  */
-
   updateVideoInfo();
 
   updateProgress();
@@ -1772,11 +1856,6 @@ function updateVideoInfo(){
     .textContent =
       data.author || "Bhajan Wala";
 
-  /*
-    YouTube thumbnail.
-    No extra API key required.
-  */
-
   const thumb =
     "https://i.ytimg.com/vi/" +
     videoId +
@@ -1801,14 +1880,23 @@ function onPlayerStateChange(event){
   ){
 
     document.getElementById("playIcon")
-      .textContent = "Ⅱ";
+      .innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 5v14"></path>
+          <path d="M17 5v14"></path>
+        </svg>
+      `;
 
     startProgress();
 
   }else{
 
     document.getElementById("playIcon")
-      .textContent = "▶";
+      .innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5l11 7-11 7V5z"></path>
+        </svg>
+      `;
 
     stopProgress();
 
@@ -2152,11 +2240,6 @@ document
         selectedNameEl.textContent =
           selectedName;
 
-        /*
-          New naam select karne par
-          counter reset.
-        */
-
         japCount = 0;
 
         counter.textContent =
@@ -2176,11 +2259,6 @@ japBtn.addEventListener(
 
     counter.textContent =
       japCount;
-
-    /*
-      Chhota pill popup.
-      Full-screen modal nahi.
-    */
 
     japToast.textContent =
       "🙏 " +
