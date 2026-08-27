@@ -1,292 +1,1244 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bhajan Wala - Bhagwan ke bhajan, shayari aur naam jap.">
-  <meta name="theme-color" content="#8b0000">
-  <title>Bhajan Wala 🛕 | Bhajan & Bhakti</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #fff;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255,190,80,.35), transparent 28%),
-        radial-gradient(circle at 85% 30%, rgba(255,70,70,.30), transparent 30%),
-        linear-gradient(145deg, #3d0010 0%, #7b0018 42%, #d43a16 100%);
-      overflow-x: hidden;
-    }
+<meta name="description" content="Bhajan Wala - Bhajan, Bhakti Shayari, Bhagwan ke naam aur Mandir ki Ghanti.">
+<meta name="theme-color" content="#7b0018">
 
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 18px 8px;
-      max-width: 850px;
-      margin: auto;
-    }
+<title>भजन वाला 🛕 | Bhajan & Bhakti</title>
 
-    .time {
-      font-size: 15px;
-      font-weight: 700;
-      opacity: .9;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    .youtube-btn {
-      text-decoration: none;
-      color: white;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 50%;
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      font-size: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.18);
-      transition: transform .2s, background .2s;
-    }
-    .youtube-btn:hover { transform: scale(1.06); background: rgba(255,0,0,.45); }
+html{
+  scroll-behavior:smooth;
+}
 
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 28px 16px 50px;
-    }
+body{
+  min-height:100vh;
+  color:white;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#240008;
+  overflow-x:hidden;
+}
 
-    .hero {
-      text-align: center;
-      padding: 18px 8px 8px;
-    }
+/* MAIN */
 
-    .om {
-      font-size: 52px;
-      filter: drop-shadow(0 5px 12px rgba(0,0,0,.25));
-    }
+.app{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
 
-    h1 {
-      margin: 4px 0 4px;
-      font-size: clamp(46px, 12vw, 82px);
-      line-height: .95;
-      font-weight: 900;
-      letter-spacing: -2px;
-      text-shadow: 0 6px 20px rgba(0,0,0,.25);
-    }
+  background:
+    linear-gradient(
+      180deg,
+      rgba(55,0,12,.30),
+      rgba(15,0,5,.94)
+    ),
+    url("https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1600&q=85")
+    center/cover fixed;
+}
 
-    .tagline {
-      margin: 12px 0 24px;
-      font-size: 14px;
-      letter-spacing: 4px;
-      opacity: .85;
-      text-transform: uppercase;
-    }
+.app:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
 
-    .bell {
-      width: min(560px, 100%);
-      margin: 18px auto 28px;
-      padding: 7px;
-      border-radius: 30px;
-      background: rgba(35, 8, 12, .58);
-      border: 1px solid rgba(255,255,255,.22);
-      box-shadow: 0 15px 45px rgba(0,0,0,.22);
-    }
+  background:
+    radial-gradient(
+      circle at 50% 5%,
+      rgba(255,195,75,.35),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 10% 40%,
+      rgba(255,70,30,.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 60%,
+      rgba(110,20,255,.20),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      #160006 92%
+    );
+}
 
-    .bell button {
-      width: 100%;
-      border: 0;
-      border-radius: 24px;
-      padding: 17px 20px;
-      color: white;
-      background: linear-gradient(135deg, #ff9d00, #e43a00);
-      font-size: 20px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: inset 0 1px rgba(255,255,255,.35);
-    }
+/* TOP */
 
-    .bell small {
-      display: block;
-      margin-top: 5px;
-      font-weight: 500;
-      opacity: .85;
-    }
+.top{
+  position:relative;
+  z-index:5;
 
-    .deities {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 8px auto 26px;
-      font-size: 17px;
-      font-weight: 700;
-    }
-    .deities span {
-      padding: 9px 13px;
-      border-radius: 99px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(8px);
-    }
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-    .card {
-      border-radius: 28px;
-      padding: 18px;
-      margin: 18px 0;
-      background: rgba(30, 5, 10, .50);
-      border: 1px solid rgba(255,255,255,.20);
-      box-shadow: 0 20px 55px rgba(0,0,0,.22);
-      backdrop-filter: blur(12px);
-    }
+  padding:16px 18px 5px;
 
-    .card h2 {
-      margin: 2px 4px 15px;
-      font-size: 23px;
-    }
+  max-width:720px;
+  margin:auto;
+}
 
-    .player {
-      overflow: hidden;
-      border-radius: 20px;
-      background: #111;
-      aspect-ratio: 16 / 9;
-    }
+.time{
+  font-size:14px;
+  font-weight:700;
 
-    .player iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+  text-shadow:
+    0 2px 10px #000;
+}
 
-    .shayari {
-      text-align: center;
-      font-size: 21px;
-      line-height: 1.65;
-      font-weight: 700;
-    }
+.youtube-btn{
+  width:40px;
+  height:40px;
 
-    .names {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .names div {
-      padding: 14px;
-      text-align: center;
-      border-radius: 16px;
-      background: rgba(255,255,255,.10);
-      font-weight: 800;
-    }
+  border-radius:50%;
 
-    footer {
-      text-align: center;
-      opacity: .75;
-      font-size: 13px;
-      padding-top: 12px;
-    }
+  display:grid;
+  place-items:center;
 
-    @media (max-width: 520px) {
-      .names { grid-template-columns: 1fr; }
-      .card { padding: 14px; }
-    }
-  </style>
+  color:white;
+  text-decoration:none;
+
+  background:rgba(0,0,0,.35);
+
+  border:1px solid rgba(255,255,255,.38);
+
+  font-size:17px;
+
+  box-shadow:
+    0 7px 20px rgba(0,0,0,.30);
+
+  transition:.2s;
+}
+
+.youtube-btn:active{
+  transform:scale(.90);
+}
+
+/* MAIN */
+
+main{
+  position:relative;
+  z-index:2;
+
+  max-width:720px;
+  margin:auto;
+
+  padding:8px 16px 35px;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:16px 5px 8px;
+}
+
+.om{
+  font-size:44px;
+
+  text-shadow:
+    0 4px 18px rgba(255,170,40,.45);
+}
+
+/* BRAND */
+
+.brand{
+  margin-top:4px;
+
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    "Times New Roman",
+    serif;
+
+  font-size:52px;
+  line-height:.95;
+
+  font-weight:900;
+
+  letter-spacing:-2px;
+
+  text-shadow:
+    0 5px 22px rgba(0,0,0,.65);
+}
+
+.tagline{
+  margin-top:9px;
+
+  font-size:11px;
+
+  letter-spacing:3px;
+
+  opacity:.80;
+}
+
+/* BELL */
+
+.bell-wrap{
+  width:min(520px,100%);
+
+  margin:25px auto 17px;
+}
+
+.bell{
+  width:100%;
+
+  padding:7px;
+
+  border:1px solid rgba(255,255,255,.30);
+
+  border-radius:25px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffad16,
+      #df3d09
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.35),
+    inset 0 1px rgba(255,255,255,.40);
+
+  cursor:pointer;
+}
+
+.bell:active{
+  transform:scale(.96);
+}
+
+.bell-inner{
+  min-height:52px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+}
+
+.bell-icon{
+  width:40px;
+  height:40px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.18);
+
+  font-size:22px;
+}
+
+.bell-title{
+  font-size:18px;
+  font-weight:900;
+}
+
+.bell-sub{
+  font-size:10px;
+  opacity:.82;
+  margin-top:2px;
+}
+
+/* BELL ANIMATION */
+
+.ring{
+  animation:ring .55s ease;
+}
+
+@keyframes ring{
+
+  0%,100%{
+    transform:rotate(0) scale(1);
+  }
+
+  20%{
+    transform:rotate(-5deg) scale(1.03);
+  }
+
+  40%{
+    transform:rotate(5deg) scale(1.06);
+  }
+
+  60%{
+    transform:rotate(-3deg) scale(1.03);
+  }
+
+}
+
+/* MANTRA */
+
+.mantra{
+  min-height:30px;
+
+  font-size:16px;
+
+  font-weight:850;
+
+  text-shadow:
+    0 2px 12px #000;
+}
+
+.fade{
+  animation:fade 4.2s ease-in-out;
+}
+
+@keyframes fade{
+
+  0%{
+    opacity:0;
+    transform:translateY(6px);
+  }
+
+  15%,80%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-6px);
+  }
+
+}
+
+/* CARDS */
+
+.card{
+  margin:14px 0;
+
+  padding:14px;
+
+  border-radius:24px;
+
+  background:
+    rgba(27,0,7,.56);
+
+  border:
+    1px solid rgba(255,255,255,.17);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.30);
+
+  backdrop-filter:blur(14px);
+}
+
+.title{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin:
+    0 3px 10px;
+}
+
+.title h2{
+  font-size:18px;
+  font-weight:900;
+}
+
+.title span{
+  font-size:10px;
+  opacity:.60;
+}
+
+/* YOUTUBE PLAYER */
+
+.player{
+  overflow:hidden;
+
+  border-radius:17px;
+
+  background:#090909;
+
+  aspect-ratio:16/9;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.35);
+}
+
+.player iframe{
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+/* SHAYARI */
+
+.shayari{
+  min-height:112px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:8px;
+
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    "Times New Roman",
+    serif;
+
+  font-size:19px;
+
+  line-height:1.65;
+
+  font-weight:700;
+}
+
+.shayari-text{
+  transition:.35s;
+}
+
+.hide{
+  opacity:0;
+
+  transform:
+    translateY(8px);
+}
+
+/* GOD NAMES */
+
+.names{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:9px;
+}
+
+.name{
+  padding:13px 8px;
+
+  text-align:center;
+
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.12),
+      rgba(255,120,20,.09)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  font-size:14px;
+
+  font-weight:850;
+
+  transition:.2s;
+}
+
+.name:active{
+  transform:scale(.96);
+}
+
+/* JAP COUNTER */
+
+.counter{
+  text-align:center;
+
+  margin-top:12px;
+}
+
+.counter-number{
+  font-size:34px;
+
+  font-weight:950;
+}
+
+.counter-label{
+  font-size:11px;
+
+  opacity:.62;
+}
+
+.jap{
+  width:100%;
+
+  padding:11px;
+
+  margin-top:9px;
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  border-radius:14px;
+
+  color:white;
+
+  background:
+    rgba(255,255,255,.08);
+
+  font-weight:850;
+
+  cursor:pointer;
+}
+
+/* SHARE */
+
+.share{
+  width:100%;
+
+  padding:11px;
+
+  margin-top:9px;
+
+  border:0;
+
+  border-radius:14px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a80024,
+      #e04b16
+    );
+
+  font-weight:850;
+
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+
+  padding:
+    13px 20px 27px;
+
+  font-size:11px;
+
+  line-height:1.7;
+
+  opacity:.72;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.footer strong{
+  display:block;
+
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    serif;
+
+  font-size:13px;
+
+  opacity:.98;
+}
+
+/* POPUP */
+
+.popup{
+  position:fixed;
+
+  left:50%;
+  bottom:22px;
+
+  z-index:50;
+
+  transform:
+    translate(-50%,20px);
+
+  opacity:0;
+
+  padding:10px 16px;
+
+  border-radius:25px;
+
+  background:
+    rgba(0,0,0,.86);
+
+  border:
+    1px solid rgba(255,255,255,.20);
+
+  font-size:12px;
+
+  transition:.25s;
+
+  white-space:nowrap;
+
+  pointer-events:none;
+}
+
+.popup.show{
+  opacity:1;
+
+  transform:
+    translate(-50%,0);
+}
+
+/* MOBILE */
+
+@media(max-width:430px){
+
+  .brand{
+    font-size:48px;
+  }
+
+}
+
+@media(min-width:700px){
+
+  .app{
+    max-width:720px;
+    margin:auto;
+  }
+
+}
+</style>
 </head>
 
 <body>
-  <div class="top">
-    <div class="time" id="time">🕐</div>
 
-    <!-- Upar wala button: seedha YouTube playlist -->
-    <a class="youtube-btn"
-       href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
-       target="_blank"
-       rel="noopener"
-       aria-label="YouTube Bhajan Playlist">▶</a>
-  </div>
+<div class="app">
+
+  <!-- TOP -->
+
+  <header class="top">
+
+    <div class="time" id="time">
+      🕐
+    </div>
+
+    <!-- DIRECT YOUTUBE PLAYLIST -->
+
+    <a
+      class="youtube-btn"
+      href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
+      target="_blank"
+      rel="noopener"
+      aria-label="YouTube Bhajan Playlist"
+    >
+      ▶
+    </a>
+
+  </header>
+
 
   <main>
+
+    <!-- HERO -->
+
     <section class="hero">
-      <div class="om">ॐ</div>
-      <h1>भजन वाला</h1>
-      <div class="tagline">Bhakti • Bhajan • Bhagwan</div>
 
-      <div class="bell">
-        <button id="bellBtn" type="button">
-          🔔 घण्टी बजाओ
-          <small>मंदिर जैसी घंटी की ध्वनि</small>
+      <div class="om">
+        ॐ
+      </div>
+
+      <div class="brand">
+        भजन वाला
+      </div>
+
+      <div class="tagline">
+        BHAKTI • BHAJAN • BHAGWAN
+      </div>
+
+
+      <!-- BELL -->
+
+      <div class="bell-wrap">
+
+        <button
+          class="bell"
+          id="bellBtn"
+          type="button"
+        >
+
+          <div class="bell-inner">
+
+            <div class="bell-icon">
+              🔔
+            </div>
+
+            <div>
+
+              <div class="bell-title">
+                घण्टी बजाओ
+              </div>
+
+              <div class="bell-sub">
+                मंदिर की पवित्र घंटी 🔔
+              </div>
+
+            </div>
+
+          </div>
+
         </button>
+
       </div>
 
-      <div class="deities">
-        <span>🔱 हर हर महादेव</span>
-        <span>🙏 जय श्री राम</span>
-        <span>🪷 राधे राधे</span>
-        <span>🕉️ जय श्री कृष्ण</span>
+
+      <!-- GOD MANTRA -->
+
+      <div
+        class="mantra"
+        id="mantra"
+      >
+        🔱 हर हर महादेव
       </div>
+
     </section>
 
+
+    <!-- BHAJAN -->
+
     <section class="card">
-      <h2>🎵 आज के भजन</h2>
+
+      <div class="title">
+
+        <h2>
+          🎵 आज के भजन
+        </h2>
+
+        <span>
+          PLAYLIST
+        </span>
+
+      </div>
+
+
       <div class="player">
+
         <iframe
           src="https://www.youtube.com/embed/videoseries?list=PLV74Ia5Eq20Y"
-          title="Bhajan Wala YouTube Playlist"
+          title="Bhajan Wala Bhajan Playlist"
           allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+        >
         </iframe>
+
       </div>
+
     </section>
 
+
+    <!-- SHAYARI -->
+
     <section class="card">
-      <h2>🌸 भक्ति शायरी</h2>
+
+      <div class="title">
+
+        <h2>
+          🌸 भक्ति शायरी
+        </h2>
+
+        <span>
+          मन से पढ़ें 🙏
+        </span>
+
+      </div>
+
+
       <div class="shayari">
-        जिसके सिर पर हाथ महादेव का हो,<br>
-        उसे डर कैसा और चिंता कैसी। 🔱<br><br>
-        नाम प्रभु का लेते रहो,<br>
-        मन में प्रेम जगाते रहो। 🙏
+
+        <div
+          class="shayari-text"
+          id="shayari"
+        >
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- GOD NAMES -->
 
     <section class="card">
-      <h2>🛕 भगवान के नाम</h2>
-      <div class="names">
-        <div>🔱 ॐ नमः शिवाय</div>
-        <div>🙏 श्री राम जय राम</div>
-        <div>🪷 राधे राधे</div>
-        <div>🦚 हरे कृष्ण</div>
-        <div>🚩 जय बजरंगबली</div>
-        <div>🌺 जय माता दी</div>
+
+      <div class="title">
+
+        <h2>
+          🛕 भगवान के नाम
+        </h2>
+
+        <span>
+          नाम जपें ❤️
+        </span>
+
       </div>
+
+
+      <div class="names">
+
+        <div class="name">
+          🔱 ॐ नमः शिवाय
+        </div>
+
+        <div class="name">
+          🚩 जय श्री राम
+        </div>
+
+        <div class="name">
+          🪷 राधे राधे
+        </div>
+
+        <div class="name">
+          🦚 हरे कृष्ण
+        </div>
+
+        <div class="name">
+          🚩 जय बजरंगबली
+        </div>
+
+        <div class="name">
+          🌺 जय माता दी
+        </div>
+
+      </div>
+
+
+      <!-- JAP COUNTER -->
+
+      <div class="counter">
+
+        <div
+          class="counter-number"
+          id="count"
+        >
+          0
+        </div>
+
+        <div class="counter-label">
+          ॐ नमः शिवाय — नाम जाप
+        </div>
+
+        <button
+          class="jap"
+          id="jap"
+          type="button"
+        >
+          🕉️ नाम जाप करें
+        </button>
+
+      </div>
+
+
+      <!-- SHARE -->
+
+      <button
+        class="share"
+        id="share"
+        type="button"
+      >
+        ↗️ भजन वाला शेयर करें
+      </button>
+
     </section>
 
-    <footer>
-      © Bhajan Wala • भक्ति और भजन के साथ ❤️
-    </footer>
   </main>
 
-  <audio id="bellAudio" preload="auto">
-    <source src="Mandir%20Ghanti.mp3" type="audio/mpeg">
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <strong>
+      Made By Anubhav Verma With Love ❤️
+    </strong>
+
+    🛕 भक्ति • भजन • भगवान
+
+  </footer>
+
+
+  <!-- BELL AUDIO -->
+
+  <audio
+    id="audio"
+    preload="auto"
+  >
+
+    <source
+      src="Mandir%20Ghanti.mp3"
+      type="audio/mpeg"
+    >
+
   </audio>
 
-  <script>
-    function updateTime() {
-      const now = new Date();
-      document.getElementById("time").textContent =
-        now.toLocaleTimeString("en-IN", {hour: "numeric", minute: "2-digit"});
-    }
-    updateTime();
-    setInterval(updateTime, 30000);
 
-    document.getElementById("bellBtn").addEventListener("click", function () {
-      const audio = document.getElementById("bellAudio");
-      audio.currentTime = 0;
-      audio.play().catch(() => {
-        alert("घंटी की MP3 file (Mandir ghanti.mp3) अभी website में upload नहीं हुई है।");
-      });
-    });
-  </script>
+  <!-- POPUP -->
+
+  <div
+    class="popup"
+    id="popup"
+  >
+  </div>
+
+
+<script>
+
+/* =========================
+   CLOCK
+========================= */
+
+function updateTime(){
+
+  document.getElementById("time").textContent =
+    new Date().toLocaleTimeString(
+      "en-IN",
+      {
+        hour:"numeric",
+        minute:"2-digit"
+      }
+    );
+
+}
+
+updateTime();
+
+setInterval(
+  updateTime,
+  30000
+);
+
+
+/* =========================
+   POPUP
+========================= */
+
+function showPopup(text){
+
+  const popup =
+    document.getElementById("popup");
+
+  popup.textContent = text;
+
+  popup.classList.add("show");
+
+  setTimeout(
+    function(){
+
+      popup.classList.remove("show");
+
+    },
+    1600
+  );
+
+}
+
+
+/* =========================
+   BELL
+========================= */
+
+const bellBtn =
+  document.getElementById("bellBtn");
+
+const bellAudio =
+  document.getElementById("audio");
+
+
+bellBtn.addEventListener(
+  "click",
+  function(){
+
+    bellBtn.classList.remove("ring");
+
+    void bellBtn.offsetWidth;
+
+    bellBtn.classList.add("ring");
+
+    bellAudio.currentTime = 0;
+
+    bellAudio.play()
+
+      .then(
+        function(){
+
+          showPopup(
+            "🔔 घंटी बज गई 🙏"
+          );
+
+        }
+      )
+
+      .catch(
+        function(){
+
+          showPopup(
+            "घंटी की MP3 नहीं मिली"
+          );
+
+        }
+      );
+
+  }
+);
+
+
+/* =========================
+   MANTRA FADE
+========================= */
+
+const mantras = [
+
+  "🔱 हर हर महादेव",
+
+  "🕉️ ॐ नमः शिवाय",
+
+  "🚩 जय श्री राम",
+
+  "🪷 राधे राधे",
+
+  "🦚 जय श्री कृष्ण",
+
+  "🌺 जय माता दी",
+
+  "🙏 जय बजरंगबली",
+
+  "🌸 सीता राम",
+
+  "🛕 श्री गणेशाय नमः"
+
+];
+
+let mantraIndex = 0;
+
+const mantra =
+  document.getElementById("mantra");
+
+
+function changeMantra(){
+
+  mantra.classList.remove("fade");
+
+  void mantra.offsetWidth;
+
+  mantra.classList.add("fade");
+
+  setTimeout(
+    function(){
+
+      mantraIndex =
+        (mantraIndex + 1)
+        % mantras.length;
+
+      mantra.textContent =
+        mantras[mantraIndex];
+
+    },
+    1200
+  );
+
+}
+
+mantra.classList.add("fade");
+
+setInterval(
+  changeMantra,
+  4200
+);
+
+
+/* =========================
+   SHAYARI FADE
+========================= */
+
+const shayaris = [
+
+  "जिसके सिर पर हाथ महादेव का हो,<br>उसे डर कैसा और चिंता कैसी। 🔱",
+
+  "भरोसा रखो उस भगवान पर,<br>जो रास्ते बंद नहीं, मंज़िलें बदलता है। 🙏",
+
+  "जहाँ श्रद्धा होती है,<br>वहीं भगवान की अनुभूति होती है। 🛕",
+
+  "नाम प्रभु का लेते रहो,<br>मन में प्रेम जगाते रहो। ❤️",
+
+  "सच्चे मन से जो भगवान को पुकारता है,<br>वो कभी अकेला नहीं रहता। 🌸",
+
+  "कर्म करते रहो,<br>बाकी सब महादेव पर छोड़ दो। 🔱",
+
+  "राधे नाम में ऐसी मिठास है,<br>जो मन को हर पल सुकून देती है। 🪷",
+
+  "राम नाम का सहारा हो,<br>तो हर मुश्किल किनारा हो। 🚩"
+
+];
+
+let shayariIndex = 0;
+
+const shayari =
+  document.getElementById("shayari");
+
+
+function changeShayari(){
+
+  shayari.classList.add("hide");
+
+  setTimeout(
+    function(){
+
+      shayari.innerHTML =
+        shayaris[shayariIndex];
+
+      shayari.classList.remove("hide");
+
+    },
+    350
+  );
+
+}
+
+
+changeShayari();
+
+setInterval(
+  function(){
+
+    shayariIndex =
+      (shayariIndex + 1)
+      % shayaris.length;
+
+    changeShayari();
+
+  },
+  5200
+);
+
+
+/* =========================
+   NAAM JAP COUNTER
+========================= */
+
+let count =
+  Number(
+    localStorage.getItem(
+      "bhajan-jap"
+    ) || 0
+  );
+
+
+const countElement =
+  document.getElementById("count");
+
+countElement.textContent =
+  count;
+
+
+document
+  .getElementById("jap")
+  .addEventListener(
+    "click",
+    function(){
+
+      count++;
+
+      countElement.textContent =
+        count;
+
+      localStorage.setItem(
+        "bhajan-jap",
+        count
+      );
+
+      showPopup(
+        "🕉️ ॐ नमः शिवाय • " + count
+      );
+
+    }
+  );
+
+
+/* =========================
+   SHARE
+========================= */
+
+document
+  .getElementById("share")
+  .addEventListener(
+    "click",
+    async function(){
+
+      if(
+        navigator.share
+      ){
+
+        try{
+
+          await navigator.share({
+
+            title:
+              "भजन वाला 🛕",
+
+            text:
+              "भजन, भक्ति और भगवान के नाम के साथ जुड़ो 🙏",
+
+            url:
+              location.href
+
+          });
+
+        }catch(e){}
+
+      }
+
+      else{
+
+        try{
+
+          await navigator.clipboard
+            .writeText(
+              location.href
+            );
+
+          showPopup(
+            "🔗 Website link copy हो गया"
+          );
+
+        }catch(e){
+
+          showPopup(
+            location.href
+          );
+
+        }
+
+      }
+
+    }
+  );
+
+</script>
+
+</div>
+
 </body>
 </html>
