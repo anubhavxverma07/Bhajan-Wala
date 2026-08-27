@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bhajan Wala - Bhagwan ke bhajan, shayari aur naam jap.">
+  <meta name="theme-color" content="#8b0000">
+  <title>Bhajan Wala 🛕 | Bhajan & Bhakti</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,190,80,.35), transparent 28%),
+        radial-gradient(circle at 85% 30%, rgba(255,70,70,.30), transparent 30%),
+        linear-gradient(145deg, #3d0010 0%, #7b0018 42%, #d43a16 100%);
+      overflow-x: hidden;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 18px 8px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .time {
+      font-size: 15px;
+      font-weight: 700;
+      opacity: .9;
+    }
+
+    .youtube-btn {
+      text-decoration: none;
+      color: white;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.18);
+      transition: transform .2s, background .2s;
+    }
+    .youtube-btn:hover { transform: scale(1.06); background: rgba(255,0,0,.45); }
+
+    main {
+      max-width: 850px;
+      margin: auto;
+      padding: 28px 16px 50px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 18px 8px 8px;
+    }
+
+    .om {
+      font-size: 52px;
+      filter: drop-shadow(0 5px 12px rgba(0,0,0,.25));
+    }
+
+    h1 {
+      margin: 4px 0 4px;
+      font-size: clamp(46px, 12vw, 82px);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-shadow: 0 6px 20px rgba(0,0,0,.25);
+    }
+
+    .tagline {
+      margin: 12px 0 24px;
+      font-size: 14px;
+      letter-spacing: 4px;
+      opacity: .85;
+      text-transform: uppercase;
+    }
+
+    .bell {
+      width: min(560px, 100%);
+      margin: 18px auto 28px;
+      padding: 7px;
+      border-radius: 30px;
+      background: rgba(35, 8, 12, .58);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 15px 45px rgba(0,0,0,.22);
+    }
+
+    .bell button {
+      width: 100%;
+      border: 0;
+      border-radius: 24px;
+      padding: 17px 20px;
+      color: white;
+      background: linear-gradient(135deg, #ff9d00, #e43a00);
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: inset 0 1px rgba(255,255,255,.35);
+    }
+
+    .bell small {
+      display: block;
+      margin-top: 5px;
+      font-weight: 500;
+      opacity: .85;
+    }
+
+    .deities {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 8px auto 26px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .deities span {
+      padding: 9px 13px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .card {
+      border-radius: 28px;
+      padding: 18px;
+      margin: 18px 0;
+      background: rgba(30, 5, 10, .50);
+      border: 1px solid rgba(255,255,255,.20);
+      box-shadow: 0 20px 55px rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .card h2 {
+      margin: 2px 4px 15px;
+      font-size: 23px;
+    }
+
+    .player {
+      overflow: hidden;
+      border-radius: 20px;
+      background: #111;
+      aspect-ratio: 16 / 9;
+    }
+
+    .player iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .shayari {
+      text-align: center;
+      font-size: 21px;
+      line-height: 1.65;
+      font-weight: 700;
+    }
+
+    .names {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .names div {
+      padding: 14px;
+      text-align: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,.10);
+      font-weight: 800;
+    }
+
+    footer {
+      text-align: center;
+      opacity: .75;
+      font-size: 13px;
+      padding-top: 12px;
+    }
+
+    @media (max-width: 520px) {
+      .names { grid-template-columns: 1fr; }
+      .card { padding: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="time" id="time">🕐</div>
+
+    <!-- Upar wala button: seedha YouTube playlist -->
+    <a class="youtube-btn"
+       href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
+       target="_blank"
+       rel="noopener"
+       aria-label="YouTube Bhajan Playlist">▶</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="om">ॐ</div>
+      <h1>भजन वाला</h1>
+      <div class="tagline">Bhakti • Bhajan • Bhagwan</div>
+
+      <div class="bell">
+        <button id="bellBtn" type="button">
+          🔔 घण्टी बजाओ
+          <small>मंदिर जैसी घंटी की ध्वनि</small>
+        </button>
+      </div>
+
+      <div class="deities">
+        <span>🔱 हर हर महादेव</span>
+        <span>🙏 जय श्री राम</span>
+        <span>🪷 राधे राधे</span>
+        <span>🕉️ जय श्री कृष्ण</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🎵 आज के भजन</h2>
+      <div class="player">
+        <iframe
+          src="https://www.youtube.com/embed/videoseries?list=PLV74Ia5Eq20Y"
+          title="Bhajan Wala YouTube Playlist"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🌸 भक्ति शायरी</h2>
+      <div class="shayari">
+        जिसके सिर पर हाथ महादेव का हो,<br>
+        उसे डर कैसा और चिंता कैसी। 🔱<br><br>
+        नाम प्रभु का लेते रहो,<br>
+        मन में प्रेम जगाते रहो। 🙏
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🛕 भगवान के नाम</h2>
+      <div class="names">
+        <div>🔱 ॐ नमः शिवाय</div>
+        <div>🙏 श्री राम जय राम</div>
+        <div>🪷 राधे राधे</div>
+        <div>🦚 हरे कृष्ण</div>
+        <div>🚩 जय बजरंगबली</div>
+        <div>🌺 जय माता दी</div>
+      </div>
+    </section>
+
+    <footer>
+      © Bhajan Wala • भक्ति और भजन के साथ ❤️
+    </footer>
+  </main>
+
+  <audio id="bellAudio" preload="auto">
+    <source src="ghanti.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("time").textContent =
+        now.toLocaleTimeString("en-IN", {hour: "numeric", minute: "2-digit"});
+    }
+    updateTime();
+    setInterval(updateTime, 30000);
+
+    document.getElementById("bellBtn").addEventListener("click", function () {
+      const audio = document.getElementById("bellAudio");
+      audio.currentTime = 0;
+      audio.play().catch(() => {
+        alert("घंटी की MP3 file (ghanti.mp3) अभी website में upload नहीं हुई है।");
+      });
+    });
+  </script>
+</body>
+</html>
