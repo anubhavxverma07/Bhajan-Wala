@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bhajan Wala - Bhajan, Bhakti, Naam Jap aur Bhagwan ke saath sukoon.">
-<meta name="theme-color" content="#56000d">
+
+<meta name="description"
+content="Bhajan Wala - Bhajan, Bhakti, Naam Jap aur Bhagwan ke naam.">
+
+<meta name="theme-color" content="#65000f">
 
 <title>Bhajan Wala 🛕 | Bhakti • Bhajan • Bhagwan</title>
 
@@ -30,133 +33,153 @@ body{
     sans-serif;
 
   background:
-    radial-gradient(circle at 18% 8%,rgba(255,173,60,.22),transparent 28%),
-    radial-gradient(circle at 85% 24%,rgba(255,40,40,.18),transparent 30%),
-    linear-gradient(145deg,#260006 0%,#56000d 42%,#8d0717 72%,#3b0009 100%);
+    radial-gradient(circle at 15% 8%,rgba(255,170,45,.20),transparent 25%),
+    radial-gradient(circle at 90% 28%,rgba(255,70,40,.18),transparent 30%),
+    radial-gradient(circle at 50% 90%,rgba(130,0,30,.45),transparent 35%),
+    linear-gradient(145deg,#2c0009 0%,#61000e 45%,#8c0714 100%);
 
   overflow-x:hidden;
 }
 
-/* ---------- TOP BAR ---------- */
+button,
+a{
+  font:inherit;
+}
 
-.topbar{
-  width:min(900px,100%);
+button{
+  cursor:pointer;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.top{
+  width:min(850px,100%);
   margin:auto;
-  padding:18px 18px 4px;
-
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-}
-
-.time{
-  justify-self:start;
-  font-size:15px;
-  font-weight:700;
-  color:rgba(255,255,255,.9);
-}
-
-.live{
-  justify-self:center;
+  padding:18px 18px 5px;
 
   display:flex;
   align-items:center;
-  gap:8px;
+  justify-content:space-between;
+}
 
+.time{
   font-size:15px;
+  font-weight:700;
+  opacity:.9;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.live{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
   font-weight:800;
-  letter-spacing:.3px;
 }
 
 .live-dot{
-  width:10px;
-  height:10px;
+  width:11px;
+  height:11px;
   border-radius:50%;
-  background:#25e978;
-  box-shadow:
-    0 0 0 4px rgba(37,233,120,.10),
-    0 0 14px rgba(37,233,120,.65);
-
-  animation:livePulse 1.8s infinite;
+  background:#31e981;
+  box-shadow:0 0 14px #31e981;
+  animation:livePulse 1.5s infinite;
 }
 
 @keyframes livePulse{
-  0%,100%{transform:scale(1);opacity:1}
-  50%{transform:scale(1.25);opacity:.7}
+  0%,100%{
+    transform:scale(1);
+    opacity:1;
+  }
+  50%{
+    transform:scale(1.25);
+    opacity:.65;
+  }
 }
 
 .youtube-top{
-  justify-self:end;
-
   width:45px;
   height:45px;
+  border-radius:50%;
 
   display:grid;
   place-items:center;
 
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.28);
-
   color:#fff;
   text-decoration:none;
 
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.25);
 
   box-shadow:
-    inset 0 1px rgba(255,255,255,.18),
-    0 8px 25px rgba(0,0,0,.25);
+    0 8px 25px rgba(0,0,0,.25),
+    inset 0 1px rgba(255,255,255,.15);
 
-  transition:.2s ease;
+  transition:.2s;
 }
 
-.youtube-top:active{
-  transform:scale(.94);
+.youtube-top:hover{
+  transform:scale(1.06);
 }
 
-.youtube-top svg{
-  width:20px;
-  height:20px;
+/* CSS PLAY ICON */
+.play-icon{
+  width:0;
+  height:0;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-left:13px solid currentColor;
+  margin-left:3px;
 }
 
-/* ---------- MAIN ---------- */
+/* =========================
+   MAIN
+========================= */
 
 main{
   width:min(850px,100%);
   margin:auto;
-  padding:25px 16px 55px;
+  padding:25px 18px 35px;
 }
 
-/* ---------- HERO ---------- */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   text-align:center;
-  padding:20px 5px 5px;
+  padding:10px 5px 4px;
 }
 
 .om{
-  font-family:Georgia,serif;
-  font-size:54px;
+  font-size:50px;
   line-height:1;
-  margin-bottom:5px;
-  text-shadow:0 7px 20px rgba(0,0,0,.35);
+  text-shadow:
+    0 4px 20px rgba(255,170,50,.3);
 }
 
 h1{
-  margin:0;
+  margin:5px 0 5px;
 
   font-family:
     Georgia,
-    "Times New Roman",
     "Noto Serif Devanagari",
     serif;
 
-  font-size:clamp(46px,12vw,78px);
+  font-size:clamp(48px,12vw,78px);
   line-height:.98;
   font-weight:900;
-  letter-spacing:-2.5px;
+  letter-spacing:-2px;
 
   text-shadow:
-    0 5px 20px rgba(0,0,0,.35);
+    0 6px 25px rgba(0,0,0,.30);
 }
 
 .tagline{
@@ -164,28 +187,30 @@ h1{
 
   font-size:13px;
   letter-spacing:4px;
-  color:rgba(255,255,255,.76);
+  opacity:.78;
 }
 
-/* ---------- BELL ---------- */
+/* =========================
+   BELL
+========================= */
 
 .bell-wrap{
   width:min(560px,100%);
-  margin:20px auto 24px;
-  padding:6px;
+  margin:18px auto 20px;
+  padding:7px;
 
-  border-radius:29px;
+  border-radius:30px;
 
-  background:rgba(30,3,7,.62);
+  background:rgba(30,4,8,.55);
   border:1px solid rgba(255,255,255,.18);
 
   box-shadow:
-    0 15px 45px rgba(0,0,0,.28);
+    0 16px 40px rgba(0,0,0,.24);
 }
 
 .bell-btn{
   width:100%;
-  min-height:76px;
+  min-height:92px;
 
   border:0;
   border-radius:24px;
@@ -193,38 +218,101 @@ h1{
   color:#fff;
 
   background:
-    linear-gradient(135deg,#ffae00 0%,#ff7800 45%,#f1280b 100%);
+    linear-gradient(
+      135deg,
+      #ffae12 0%,
+      #ff7200 48%,
+      #f02b08 100%
+    );
 
   box-shadow:
     inset 0 1px rgba(255,255,255,.4),
-    0 8px 25px rgba(255,86,0,.20);
+    0 10px 28px rgba(255,90,0,.18);
 
-  cursor:pointer;
+  transition:
+    transform .16s ease,
+    filter .16s ease;
 }
 
-.bell-title{
-  display:block;
-  font-size:21px;
+.bell-btn:active{
+  transform:scale(.975);
+}
+
+.bell-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+}
+
+.bell-main{
+  font-size:24px;
   font-weight:900;
 }
 
 .bell-sub{
-  display:block;
-  margin-top:4px;
-  font-size:13px;
-  opacity:.88;
+  font-size:14px;
+  opacity:.82;
 }
 
-/* ---------- DEITY PILLS ---------- */
+.bell-emoji{
+  display:inline-block;
+  margin-right:5px;
+}
 
-.deity-pills{
+.bell-btn.ringing .bell-emoji{
+  animation:
+    bellShake .55s ease-in-out,
+    bellGlow .55s ease-in-out;
+}
+
+@keyframes bellShake{
+  0%{transform:rotate(0)}
+  15%{transform:rotate(14deg)}
+  30%{transform:rotate(-14deg)}
+  45%{transform:rotate(10deg)}
+  60%{transform:rotate(-8deg)}
+  75%{transform:rotate(5deg)}
+  100%{transform:rotate(0)}
+}
+
+@keyframes bellGlow{
+  0%{filter:drop-shadow(0 0 0 transparent)}
+  50%{filter:drop-shadow(0 0 15px #ffd15a)}
+  100%{filter:drop-shadow(0 0 0 transparent)}
+}
+
+.bell-btn.ringing{
+  animation:bellButton .55s ease;
+}
+
+@keyframes bellButton{
+  0%,100%{
+    box-shadow:
+      inset 0 1px rgba(255,255,255,.4),
+      0 10px 28px rgba(255,90,0,.18);
+  }
+  50%{
+    box-shadow:
+      0 0 0 5px rgba(255,190,40,.13),
+      0 0 32px rgba(255,150,20,.65),
+      inset 0 1px rgba(255,255,255,.5);
+  }
+}
+
+/* =========================
+   DEITY PILLS
+========================= */
+
+.deities{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:9px;
   flex-wrap:wrap;
+  gap:9px;
 
-  margin:5px auto 25px;
+  margin:10px auto 23px;
 }
 
 .deity-pill{
@@ -232,25 +320,23 @@ h1{
 
   border-radius:999px;
 
-  color:#fff;
-  background:rgba(255,255,255,.09);
-
+  background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.18);
 
   box-shadow:
     inset 0 1px rgba(255,255,255,.12),
-    0 5px 18px rgba(0,0,0,.14);
+    0 5px 15px rgba(0,0,0,.12);
 
-  backdrop-filter:blur(10px);
-
-  font-size:14px;
-  font-weight:800;
+  font-size:15px;
+  font-weight:750;
 }
 
-/* ---------- SHAYARI ---------- */
+/* =========================
+   SHAYARI
+========================= */
 
-.shayari-box{
-  min-height:72px;
+.shayari-area{
+  min-height:78px;
 
   display:flex;
   align-items:center;
@@ -258,11 +344,13 @@ h1{
 
   text-align:center;
 
-  margin:10px auto 24px;
-  padding:8px 15px;
+  margin:3px auto 17px;
+  padding:4px 15px;
 }
 
-.shayari{
+.shayari-text{
+  max-width:650px;
+
   font-family:
     Georgia,
     "Noto Serif Devanagari",
@@ -272,69 +360,232 @@ h1{
   line-height:1.55;
   font-weight:700;
 
-  text-shadow:0 3px 14px rgba(0,0,0,.3);
-
-  animation:shayariFade .8s ease;
+  transition:
+    opacity .45s ease,
+    transform .45s ease;
 }
 
-@keyframes shayariFade{
-  0%{
-    opacity:0;
-    transform:translateY(8px);
-  }
-  100%{
-    opacity:1;
-    transform:translateY(0);
-  }
+.shayari-text.fade-out{
+  opacity:0;
+  transform:translateY(7px);
 }
 
-/* ---------- PLAYER ---------- */
+.shayari-text.fade-in{
+  opacity:1;
+  transform:translateY(0);
+}
 
-.player-card{
-  margin:15px 0 20px;
-  padding:10px;
+/* =========================
+   PLAYER CARD
+========================= */
 
-  border-radius:25px;
+.player-shell{
+  width:100%;
+  max-width:700px;
+  margin:0 auto 18px;
 
-  background:rgba(25,2,7,.62);
+  padding:14px;
+
+  border-radius:27px;
+
+  background:rgba(35,0,8,.56);
 
   border:1px solid rgba(255,255,255,.18);
 
   box-shadow:
-    0 20px 50px rgba(0,0,0,.28),
-    inset 0 1px rgba(255,255,255,.06);
+    0 20px 50px rgba(0,0,0,.25),
+    inset 0 1px rgba(255,255,255,.08);
 }
 
 .player{
-  position:relative;
-  overflow:hidden;
-
   width:100%;
-  max-width:650px;
+  position:relative;
 
-  margin:auto;
-
-  border-radius:20px;
+  border-radius:21px;
 
   background:#050505;
 
-  border:1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+
+  perspective:1200px;
+}
+
+/* FIXED COMPACT PLAYER HEIGHT */
+.player-inner{
+  position:relative;
+  width:100%;
+  height:345px;
+
+  transform-style:preserve-3d;
+  transition:transform .65s cubic-bezier(.2,.75,.25,1);
+}
+
+.player.flipped .player-inner{
+  transform:rotateY(180deg);
+}
+
+.player-face{
+  position:absolute;
+  inset:0;
+
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+
+  border-radius:21px;
+  overflow:hidden;
+}
+
+/* =========================
+   COVER SIDE
+========================= */
+
+.cover-face{
+  z-index:2;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(255,130,20,.23),
+      transparent 35%
+    ),
+    linear-gradient(145deg,#16070b,#050505);
+}
+
+.cover-image{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:.82;
+
+  filter:saturate(1.15);
+}
+
+.cover-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.48)
+    );
+}
+
+.cover-content{
+  position:absolute;
+  inset:0;
+
+  padding:22px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  z-index:2;
+}
+
+.cover-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.cover-thumb{
+  width:72px;
+  height:72px;
+
+  border-radius:17px;
+
+  object-fit:cover;
+
+  border:2px solid rgba(255,255,255,.38);
+
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+.cover-title{
+  min-width:0;
+}
+
+.cover-title strong{
+  display:block;
+
+  font-size:21px;
+  font-weight:900;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.cover-title span{
+  display:block;
+  margin-top:4px;
+
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+}
+
+.cover-play{
+  align-self:center;
+
+  width:76px;
+  height:76px;
+
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  color:#fff;
+
+  background:
+    linear-gradient(135deg,#ffae00,#ff4a00);
+
+  border:0;
 
   box-shadow:
-    inset 0 0 40px rgba(255,92,0,.08);
+    0 0 35px rgba(255,120,0,.5),
+    inset 0 1px rgba(255,255,255,.45);
+
+  transition:.2s;
 }
 
-/* Compact video area */
-.video-area{
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 7.8;
-
-  background:#050505;
-  overflow:hidden;
+.cover-play .play-icon{
+  border-top-width:12px;
+  border-bottom-width:12px;
+  border-left-width:18px;
 }
 
-#ytplayer{
+.cover-play:active{
+  transform:scale(.94);
+}
+
+.tap-hint{
+  text-align:center;
+
+  font-size:12px;
+  opacity:.7;
+
+  letter-spacing:.7px;
+}
+
+/* =========================
+   VIDEO SIDE
+========================= */
+
+.video-face{
+  transform:rotateY(180deg);
+  background:#000;
+}
+
+.youtube-frame{
   position:absolute;
   inset:0;
 
@@ -342,236 +593,425 @@ h1{
   height:100%;
 
   border:0;
+
+  pointer-events:none;
 }
 
-.player-overlay{
+/*
+  Important:
+  Video itself isn't used as the interaction surface.
+  A transparent tap layer sits above it.
+*/
+
+.video-tap{
   position:absolute;
   inset:0;
-  pointer-events:none;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.06),
-      transparent 50%,
-      rgba(0,0,0,.20)
-    );
+  z-index:5;
+
+  background:transparent;
 }
 
-/* Song information */
+/* =========================
+   CUSTOM CONTROLS
+========================= */
 
-.song-info{
+.controls{
   position:absolute;
+
   left:18px;
   right:18px;
-  top:16px;
+  bottom:15px;
+
+  z-index:10;
 
   display:flex;
-  align-items:center;
-  gap:12px;
-
-  pointer-events:none;
+  flex-direction:column;
+  gap:10px;
 }
 
-.cover{
-  flex:0 0 58px;
-  width:58px;
-  height:58px;
-
-  border-radius:15px;
-
-  object-fit:cover;
-
-  border:2px solid rgba(255,255,255,.25);
-
-  background:
-    linear-gradient(135deg,#4b101c,#180308);
-
-  box-shadow:0 7px 20px rgba(0,0,0,.4);
-}
-
-.song-text{
-  min-width:0;
-  text-align:left;
-}
-
-.song-title{
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-
-  font-size:17px;
-  font-weight:900;
-
-  text-shadow:0 3px 10px rgba(0,0,0,.8);
-}
-
-.song-channel{
-  margin-top:3px;
-
-  font-size:13px;
-  color:rgba(255,255,255,.68);
-}
-
-/* Progress */
-
-.progress-wrap{
-  padding:11px 18px 4px;
+.progress-row{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
 }
 
 .progress{
-  position:relative;
-
   width:100%;
-  height:5px;
+  height:6px;
 
-  border-radius:10px;
+  appearance:none;
+  -webkit-appearance:none;
+
+  border-radius:999px;
 
   background:rgba(255,255,255,.25);
+
+  outline:none;
 
   cursor:pointer;
 }
 
-.progress-fill{
-  position:absolute;
-  left:0;
-  top:0;
+.progress::-webkit-slider-thumb{
+  appearance:none;
+  -webkit-appearance:none;
 
-  width:0%;
-  height:100%;
-
-  border-radius:10px;
-
-  background:linear-gradient(90deg,#ff9d00,#ff4d00);
-}
-
-.progress-dot{
-  position:absolute;
-  top:50%;
-  left:0%;
-
-  width:12px;
-  height:12px;
-
-  transform:translate(-50%,-50%);
+  width:15px;
+  height:15px;
 
   border-radius:50%;
 
-  background:#ff9d00;
+  background:#ff9a00;
 
-  box-shadow:0 0 10px rgba(255,157,0,.7);
+  border:2px solid #fff;
+
+  box-shadow:
+    0 0 12px rgba(255,130,0,.7);
+}
+
+.progress::-moz-range-thumb{
+  width:15px;
+  height:15px;
+
+  border-radius:50%;
+
+  background:#ff9a00;
+  border:2px solid #fff;
 }
 
 .time-row{
   display:flex;
   justify-content:space-between;
 
-  margin-top:7px;
-
   font-size:11px;
-  color:rgba(255,255,255,.62);
+  color:rgba(255,255,255,.65);
 }
 
-/* Custom controls */
-
-.controls{
-  width:100%;
-
+.control-buttons{
   display:flex;
-  align-items:center;
   justify-content:center;
-
-  gap:10px;
-
-  padding:9px 12px 13px;
+  align-items:center;
+  gap:15px;
 }
 
 .control-btn{
-  width:52px;
-  height:52px;
+  width:55px;
+  height:55px;
 
-  flex:0 0 52px;
+  flex:0 0 55px;
 
   border-radius:50%;
-
-  border:1px solid rgba(255,255,255,.22);
-
-  color:#fff;
 
   display:grid;
   place-items:center;
 
-  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.23);
+
+  color:#fff;
+
+  background:
+    rgba(255,255,255,.08);
 
   box-shadow:
-    inset 0 1px rgba(255,255,255,.10),
-    0 5px 15px rgba(0,0,0,.20);
+    inset 0 1px rgba(255,255,255,.12),
+    0 5px 14px rgba(0,0,0,.25);
 
-  cursor:pointer;
-
-  transition:.18s ease;
+  transition:.16s;
 }
 
 .control-btn:active{
   transform:scale(.91);
 }
 
-.control-btn svg{
-  width:22px;
-  height:22px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
+.control-btn.main{
+  width:68px;
+  height:68px;
+  flex-basis:68px;
 
-.play-btn{
-  width:66px;
-  height:66px;
-  flex-basis:66px;
+  background:
+    linear-gradient(135deg,#ffab00,#ff4a00);
 
   border:0;
 
-  color:#fff;
-
-  background:
-    linear-gradient(135deg,#ffb000,#ff6a00,#ff3b00);
-
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.10),
-    0 9px 30px rgba(255,100,0,.38),
+    0 0 28px rgba(255,105,0,.35),
     inset 0 1px rgba(255,255,255,.4);
 }
 
-.play-btn svg{
-  width:27px;
-  height:27px;
+/* CSS icons */
+.icon-shuffle{
+  width:21px;
+  height:17px;
+  position:relative;
 }
 
-/* ---------- SECTION CARD ---------- */
+.icon-shuffle:before,
+.icon-shuffle:after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:15px;
+  height:7px;
+  border-top:2px solid currentColor;
+  border-right:2px solid currentColor;
+}
+
+.icon-shuffle:before{
+  top:0;
+  transform:skewY(28deg);
+}
+
+.icon-shuffle:after{
+  bottom:0;
+  transform:skewY(-28deg);
+}
+
+.icon-prev,
+.icon-next{
+  position:relative;
+  width:20px;
+  height:20px;
+}
+
+.icon-prev:before,
+.icon-next:before{
+  content:"";
+  position:absolute;
+  top:3px;
+
+  width:0;
+  height:0;
+
+  border-top:7px solid transparent;
+  border-bottom:7px solid transparent;
+}
+
+.icon-prev:after,
+.icon-next:after{
+  content:"";
+  position:absolute;
+  top:3px;
+
+  width:3px;
+  height:14px;
+
+  background:currentColor;
+}
+
+.icon-prev:before{
+  left:5px;
+  border-right:10px solid currentColor;
+}
+
+.icon-prev:after{
+  left:1px;
+}
+
+.icon-next:before{
+  right:5px;
+  border-left:10px solid currentColor;
+}
+
+.icon-next:after{
+  right:1px;
+}
+
+.icon-list{
+  width:21px;
+  height:16px;
+
+  border-top:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+
+  position:relative;
+}
+
+.icon-list:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:5px;
+
+  border-top:2px solid currentColor;
+}
+
+.icon-list:after{
+  content:"";
+  position:absolute;
+  right:-1px;
+  top:3px;
+
+  width:0;
+  height:0;
+
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+  border-left:6px solid currentColor;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 .card{
-  margin:20px 0;
-  padding:17px;
+  margin:18px 0;
+
+  padding:18px;
 
   border-radius:27px;
 
-  background:rgba(28,2,8,.55);
+  background:rgba(28,0,7,.52);
 
   border:1px solid rgba(255,255,255,.17);
 
   box-shadow:
-    0 18px 50px rgba(0,0,0,.24),
-    inset 0 1px rgba(255,255,255,.04);
+    0 18px 48px rgba(0,0,0,.22),
+    inset 0 1px rgba(255,255,255,.05);
 }
 
-.section-title{
+.card h2{
   margin:0 4px 16px;
 
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    serif;
+
+  font-size:25px;
+}
+
+/* =========================
+   BHAGWAN CARDS
+========================= */
+
+.deity-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.deity-card{
+  position:relative;
+
+  min-height:210px;
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,255,255,.2);
+
+  background:#140307;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.22);
+
+  transition:transform .2s;
+}
+
+.deity-card:active{
+  transform:scale(.98);
+}
+
+.deity-card img{
+  width:100%;
+  height:100%;
+
+  min-height:210px;
+
+  object-fit:cover;
+
+  display:block;
+
+  filter:saturate(1.15);
+}
+
+.deity-card:after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.85),
+      rgba(0,0,0,.08) 65%
+    );
+}
+
+.deity-info{
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:13px;
+
+  z-index:2;
+}
+
+.deity-name{
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    serif;
+
+  font-size:20px;
+  font-weight:900;
+}
+
+.deity-mantra{
+  margin-top:3px;
+
+  font-size:12px;
+  opacity:.76;
+}
+
+/* =========================
+   SHAYARI CARD
+========================= */
+
+.shayari-card{
   display:flex;
-  align-items:center;
+  flex-direction:column;
   gap:10px;
+}
+
+.shayari-box{
+  padding:18px 15px;
+
+  text-align:center;
+
+  border-radius:17px;
+
+  background:rgba(255,255,255,.055);
+
+  border:1px solid rgba(255,255,255,.10);
+
+  font-family:
+    Georgia,
+    "Noto Serif Devanagari",
+    serif;
+
+  font-size:17px;
+  line-height:1.55;
+}
+
+/* =========================
+   NAAM JAP
+========================= */
+
+.jap-card{
+  text-align:center;
+}
+
+.jap-selected-label{
+  font-size:12px;
+  opacity:.55;
+}
+
+.jap-selected{
+  margin:4px 0;
 
   font-family:
     Georgia,
@@ -582,143 +1022,7 @@ h1{
   font-weight:900;
 }
 
-/* ---------- BHAGWAN ---------- */
-
-.gods{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.god{
-  position:relative;
-  min-height:180px;
-
-  overflow:hidden;
-
-  border-radius:21px;
-
-  border:1px solid rgba(255,255,255,.20);
-
-  background:#180308;
-
-  box-shadow:
-    0 12px 25px rgba(0,0,0,.25);
-}
-
-.god img{
-  width:100%;
-  height:100%;
-
-  position:absolute;
-  inset:0;
-
-  object-fit:cover;
-
-  transition:transform .5s ease;
-}
-
-.god:hover img{
-  transform:scale(1.04);
-}
-
-.god::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 35%,
-      rgba(0,0,0,.78) 100%
-    );
-}
-
-.god-content{
-  position:absolute;
-  z-index:2;
-
-  left:14px;
-  right:14px;
-  bottom:13px;
-
-  text-align:left;
-}
-
-.god-name{
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    serif;
-
-  font-size:19px;
-  font-weight:900;
-}
-
-.god-mantra{
-  margin-top:3px;
-
-  font-size:12px;
-
-  color:rgba(255,255,255,.76);
-}
-
-/* ---------- SHAYARI CARDS ---------- */
-
-.shayari-list{
-  display:grid;
-  gap:10px;
-}
-
-.shayari-item{
-  padding:15px;
-
-  border-radius:17px;
-
-  background:rgba(255,255,255,.065);
-
-  border:1px solid rgba(255,255,255,.10);
-
-  text-align:center;
-
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    serif;
-
-  font-size:17px;
-  line-height:1.55;
-  font-weight:700;
-}
-
-/* ---------- NAAM JAP ---------- */
-
-.jap-card{
-  text-align:center;
-}
-
-.selected-label{
-  font-size:12px;
-  color:rgba(255,255,255,.56);
-
-  margin-bottom:5px;
-}
-
-.selected-name{
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    serif;
-
-  font-size:27px;
-  font-weight:900;
-
-  min-height:38px;
-}
-
-.counter{
+.jap-count{
   margin:4px 0 12px;
 
   font-size:68px;
@@ -728,33 +1032,34 @@ h1{
 
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
+
+  text-shadow:
+    0 5px 25px rgba(255,130,0,.22);
 }
 
 .jap-btn{
   border:0;
 
-  padding:12px 27px;
+  padding:13px 28px;
 
   border-radius:999px;
 
   color:#fff;
 
-  font-size:16px;
+  background:
+    linear-gradient(135deg,#e50920,#ff6500);
+
+  font-size:17px;
   font-weight:900;
 
-  background:
-    linear-gradient(135deg,#e30b1b,#ff6500);
-
   box-shadow:
-    0 9px 25px rgba(255,64,0,.25),
-    inset 0 1px rgba(255,255,255,.25);
-
-  cursor:pointer;
+    0 9px 24px rgba(255,55,0,.22);
 }
 
-/* ---------- NAME GRID ---------- */
+.jap-btn:active{
+  transform:scale(.96);
+}
 
 .name-grid{
   display:grid;
@@ -762,304 +1067,233 @@ h1{
   gap:10px;
 }
 
-.name-btn{
-  min-height:55px;
-
-  border:1px solid rgba(255,255,255,.11);
+.name-option{
+  min-height:58px;
 
   border-radius:17px;
 
-  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
 
   color:#fff;
 
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    serif;
+  background:rgba(255,255,255,.055);
 
-  font-size:16px;
   font-weight:800;
 
-  cursor:pointer;
-
-  transition:.2s ease;
+  transition:.2s;
 }
 
-.name-btn.selected{
+.name-option.selected{
+  border-color:#ff9b16;
+
   background:
     linear-gradient(
       135deg,
-      rgba(255,155,0,.30),
-      rgba(255,40,0,.20)
+      rgba(255,137,0,.24),
+      rgba(255,40,0,.13)
     );
 
-  border-color:rgba(255,157,0,.65);
-
   box-shadow:
-    0 0 18px rgba(255,130,0,.10);
+    0 0 18px rgba(255,120,0,.12);
 }
 
-/* ---------- TOAST ---------- */
+/* =========================
+   JAP TOAST
+========================= */
 
-.toast{
+.jap-toast{
   position:fixed;
 
   left:50%;
 
   bottom:24px;
 
-  z-index:9999;
+  z-index:100;
 
   transform:
-    translate(-50%,120px);
+    translate(-50%,20px)
+    scale(.92);
 
   opacity:0;
-
   pointer-events:none;
 
-  padding:11px 20px;
+  padding:12px 20px;
 
   border-radius:999px;
 
   background:
-    rgba(35,4,9,.94);
+    rgba(25,0,6,.94);
 
-  border:1px solid rgba(255,166,0,.42);
+  border:1px solid rgba(255,170,40,.4);
 
   box-shadow:
-    0 12px 35px rgba(0,0,0,.4);
+    0 12px 35px rgba(0,0,0,.38),
+    0 0 25px rgba(255,100,0,.12);
 
-  font-size:14px;
   font-weight:800;
 
   transition:
-    transform .38s cubic-bezier(.2,.8,.2,1),
-    opacity .3s ease;
+    opacity .25s ease,
+    transform .25s ease;
 }
 
-.toast.show{
-  transform:
-    translate(-50%,0);
-
+.jap-toast.show{
   opacity:1;
+
+  transform:
+    translate(-50%,0)
+    scale(1);
 }
 
-/* ---------- FOOTER ---------- */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   text-align:center;
 
-  padding:30px 10px 15px;
+  padding:25px 8px 18px;
 
-  color:rgba(255,255,255,.7);
+  opacity:.78;
 }
 
-.footer-title{
+.footer-brand{
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size:31px;
+  font-size:29px;
   font-weight:900;
 
-  color:#fff;
+  letter-spacing:.2px;
 }
 
 .footer-made{
-  margin-top:7px;
+  margin-top:6px;
 
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size:17px;
+  font-size:18px;
   font-weight:700;
-
-  color:rgba(255,255,255,.9);
-}
-
-.footer-line{
-  width:55px;
-  height:2px;
-
-  margin:14px auto;
-
-  border-radius:10px;
-
-  background:rgba(255,255,255,.35);
 }
 
 .footer-sub{
+  margin-top:8px;
+
   font-size:11px;
-  letter-spacing:2px;
-  opacity:.55;
+  letter-spacing:3px;
+
+  opacity:.5;
 }
 
-/* ---------- MOBILE ---------- */
+.footer-line{
+  width:100px;
+  height:1px;
 
-@media(max-width:560px){
+  margin:14px auto 0;
+
+  background:rgba(255,255,255,.25);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
 
   main{
-    padding-left:12px;
-    padding-right:12px;
-  }
-
-  .topbar{
     padding-left:14px;
     padding-right:14px;
   }
 
-  .live{
-    font-size:13px;
+  .player-inner{
+    height:320px;
   }
 
-  .youtube-top{
-    width:42px;
-    height:42px;
-  }
-
-  .hero{
-    padding-top:15px;
-  }
-
-  h1{
-    font-size:58px;
-  }
-
-  .tagline{
-    font-size:11px;
-    letter-spacing:3px;
-  }
-
-  .deity-pill{
-    font-size:13px;
-    padding:8px 12px;
-  }
-
-  .shayari{
-    font-size:18px;
-  }
-
-  .player-card{
-    padding:8px;
-    border-radius:22px;
-  }
-
-  .player{
-    border-radius:18px;
-  }
-
-  .video-area{
-    aspect-ratio:16 / 8;
-  }
-
-  .song-info{
-    left:12px;
-    right:12px;
-    top:11px;
-  }
-
-  .cover{
-    width:50px;
-    height:50px;
-    flex-basis:50px;
-    border-radius:13px;
-  }
-
-  .song-title{
-    font-size:15px;
-  }
-
-  .song-channel{
-    font-size:11px;
-  }
-
-  .progress-wrap{
-    padding-left:12px;
-    padding-right:12px;
+  .player-shell{
+    padding:10px;
+    border-radius:24px;
   }
 
   .controls{
-    gap:7px;
-    padding-left:5px;
-    padding-right:5px;
+    left:12px;
+    right:12px;
+    bottom:11px;
+  }
+
+  .control-buttons{
+    gap:9px;
   }
 
   .control-btn{
-    width:46px;
-    height:46px;
-    flex-basis:46px;
+    width:51px;
+    height:51px;
+    flex-basis:51px;
   }
 
-  .control-btn svg{
-    width:19px;
-    height:19px;
+  .control-btn.main{
+    width:64px;
+    height:64px;
+    flex-basis:64px;
   }
 
-  .play-btn{
+  .cover-content{
+    padding:18px;
+  }
+
+  .cover-thumb{
+    width:62px;
+    height:62px;
+  }
+
+  .cover-title strong{
+    font-size:18px;
+  }
+
+  .cover-play{
+    width:70px;
+    height:70px;
+  }
+
+  .deity-grid{
+    gap:10px;
+  }
+
+  .deity-card{
+    min-height:190px;
+  }
+
+  .deity-card img{
+    min-height:190px;
+  }
+}
+
+@media(max-width:390px){
+
+  .player-inner{
+    height:300px;
+  }
+
+  .control-buttons{
+    gap:6px;
+  }
+
+  .control-btn{
+    width:47px;
+    height:47px;
+    flex-basis:47px;
+  }
+
+  .control-btn.main{
     width:59px;
     height:59px;
     flex-basis:59px;
   }
 
-  .play-btn svg{
-    width:24px;
-    height:24px;
-  }
-
   .card{
     padding:14px;
-    border-radius:23px;
-  }
-
-  .section-title{
-    font-size:23px;
-  }
-
-  .god{
-    min-height:160px;
-  }
-
-  .god-name{
-    font-size:17px;
-  }
-
-  .name-btn{
-    font-size:15px;
-  }
-
-  .footer-title{
-    font-size:28px;
-  }
-
-  .footer-made{
-    font-size:16px;
-  }
-}
-
-@media(max-width:380px){
-
-  .controls{
-    gap:4px;
-  }
-
-  .control-btn{
-    width:42px;
-    height:42px;
-    flex-basis:42px;
-  }
-
-  .play-btn{
-    width:54px;
-    height:54px;
-    flex-basis:54px;
-  }
-
-  .deity-pill{
-    font-size:12px;
   }
 }
 </style>
@@ -1067,38 +1301,43 @@ footer{
 
 <body>
 
-<!-- ================= TOP ================= -->
+<!-- =========================
+     TOP
+========================= -->
 
-<header class="topbar">
+<div class="top">
 
-  <div class="time" id="time">2:11 PM</div>
+  <div class="time" id="time">🕐</div>
 
-  <div class="live">
-    <span class="live-dot"></span>
-    <span>LIVE • भक्ति</span>
+  <div class="top-right">
+
+    <div class="live">
+      <span class="live-dot"></span>
+      <span>LIVE • भक्ति</span>
+    </div>
+
+    <!-- DIRECT PLAYLIST -->
+    <a
+      class="youtube-top"
+      href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
+      target="_blank"
+      rel="noopener"
+      aria-label="YouTube Playlist">
+
+      <span class="play-icon"></span>
+
+    </a>
+
   </div>
 
-  <a
-    class="youtube-top"
-    href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
-    target="_blank"
-    rel="noopener"
-    aria-label="YouTube Playlist">
-
-    <svg viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="M8 5v14l11-7z"/>
-    </svg>
-
-  </a>
-
-</header>
+</div>
 
 
 <main>
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -1115,15 +1354,23 @@ footer{
 
   <div class="bell-wrap">
 
-    <button class="bell-btn" id="bellBtn">
+    <button
+      class="bell-btn"
+      id="bellBtn"
+      type="button">
 
-      <span class="bell-title">
-        🔔 घण्टी बजाओ
-      </span>
+      <div class="bell-content">
 
-      <span class="bell-sub">
-        मंदिर की पवित्र घंटी
-      </span>
+        <div class="bell-main">
+          <span class="bell-emoji" id="bellEmoji">🔔</span>
+          घण्टी बजाओ
+        </div>
+
+        <div class="bell-sub">
+          मंदिर की पवित्र घंटी
+        </div>
+
+      </div>
 
     </button>
 
@@ -1132,11 +1379,14 @@ footer{
 
   <!-- SMALL PILLS -->
 
-  <div class="deity-pills">
+  <div class="deities">
 
     <span class="deity-pill">🔱 हर हर महादेव</span>
+
     <span class="deity-pill">🙏 जय श्री राम</span>
+
     <span class="deity-pill">🪷 राधे राधे</span>
+
     <span class="deity-pill">🦚 जय श्री कृष्ण</span>
 
   </div>
@@ -1144,13 +1394,15 @@ footer{
 
   <!-- ROTATING SHAYARI -->
 
-  <div class="shayari-box">
+  <div class="shayari-area">
 
     <div
-      class="shayari"
-      id="heroShayari">
+      id="heroShayari"
+      class="shayari-text fade-in">
+
       भक्ति में जो सुकून है,<br>
       वो दुनिया की किसी दौलत में नहीं। 🙏
+
     </div>
 
   </div>
@@ -1158,175 +1410,186 @@ footer{
 </section>
 
 
-<!-- ================= MUSIC PLAYER ================= -->
+<!-- =========================
+     MUSIC PLAYER
+========================= -->
 
-<section class="player-card">
+<section class="player-shell">
 
-  <div class="player">
+  <div
+    class="player"
+    id="musicPlayer">
 
-    <div class="video-area">
-
-      <div id="ytplayer"></div>
-
-      <div class="player-overlay"></div>
+    <div class="player-inner">
 
 
-      <div class="song-info">
+      <!-- COVER FRONT -->
+
+      <div class="player-face cover-face">
 
         <img
-          class="cover"
-          id="cover"
-          src="https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg"
-          alt="Bhajan cover">
+          id="coverImage"
+          class="cover-image"
+          src="https://i.ytimg.com/vi/PphmrFkvyM0/hqdefault.jpg"
+          alt="Bhajan Cover">
 
-        <div class="song-text">
+        <div class="cover-overlay"></div>
 
-          <div
-            class="song-title"
-            id="songTitle">
-            Bhajan Wala
+        <div class="cover-content">
+
+          <div class="cover-top">
+
+            <img
+              id="coverThumb"
+              class="cover-thumb"
+              src="https://i.ytimg.com/vi/PphmrFkvyM0/hqdefault.jpg"
+              alt="Song Cover">
+
+            <div class="cover-title">
+
+              <strong id="coverTitle">
+                Sankatmochan Hanuman
+              </strong>
+
+              <span id="coverArtist">
+                Raanjha • YouTube
+              </span>
+
+            </div>
+
           </div>
 
-          <div
-            class="song-channel"
-            id="songChannel">
-            YouTube Playlist
+
+          <button
+            class="cover-play"
+            id="coverPlay"
+            type="button"
+            aria-label="Play">
+
+            <span class="play-icon"></span>
+
+          </button>
+
+
+          <div class="tap-hint">
+            TAP TO PLAY • VIDEO WILL FLIP IN
           </div>
 
         </div>
 
       </div>
 
-    </div>
 
+      <!-- VIDEO BACK -->
 
-    <!-- PROGRESS -->
-
-    <div class="progress-wrap">
-
-      <div
-        class="progress"
-        id="progress">
+      <div class="player-face video-face">
 
         <div
-          class="progress-fill"
-          id="progressFill">
+          id="youtubePlayer"
+          class="youtube-frame">
         </div>
 
         <div
-          class="progress-dot"
-          id="progressDot">
+          class="video-tap"
+          id="videoTap">
+        </div>
+
+
+        <!-- CUSTOM CONTROLS -->
+
+        <div class="controls">
+
+          <div class="progress-row">
+
+            <input
+              id="progress"
+              class="progress"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step=".1">
+
+            <div class="time-row">
+
+              <span id="currentTime">
+                0:00
+              </span>
+
+              <span id="duration">
+                0:00
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="control-buttons">
+
+
+            <button
+              class="control-btn"
+              id="shuffleBtn"
+              type="button"
+              aria-label="Shuffle">
+
+              <span class="icon-shuffle"></span>
+
+            </button>
+
+
+            <button
+              class="control-btn"
+              id="prevBtn"
+              type="button"
+              aria-label="Previous">
+
+              <span class="icon-prev"></span>
+
+            </button>
+
+
+            <button
+              class="control-btn main"
+              id="playBtn"
+              type="button"
+              aria-label="Play">
+
+              <span
+                id="playIcon"
+                class="play-icon">
+              </span>
+
+            </button>
+
+
+            <button
+              class="control-btn"
+              id="nextBtn"
+              type="button"
+              aria-label="Next">
+
+              <span class="icon-next"></span>
+
+            </button>
+
+
+            <button
+              class="control-btn"
+              id="playlistBtn"
+              type="button"
+              aria-label="Open Playlist">
+
+              <span class="icon-list"></span>
+
+            </button>
+
+          </div>
+
         </div>
 
       </div>
-
-      <div class="time-row">
-
-        <span id="currentTime">0:00</span>
-        <span id="duration">0:00</span>
-
-      </div>
-
-    </div>
-
-
-    <!-- CUSTOM CONTROLS -->
-
-    <div class="controls">
-
-      <!-- SHUFFLE -->
-
-      <button
-        class="control-btn"
-        id="shuffleBtn"
-        aria-label="Shuffle">
-
-        <svg viewBox="0 0 24 24">
-
-          <path d="M3 7h3c4 0 6 10 10 10h5"/>
-          <path d="M18 14l3 3-3 3"/>
-
-          <path d="M3 17h3c1.5 0 2.5-1 3.5-2.5"/>
-          <path d="M15 7.5C16 6 17 5 18 5h3"/>
-          <path d="M18 2l3 3-3 3"/>
-
-        </svg>
-
-      </button>
-
-
-      <!-- PREVIOUS -->
-
-      <button
-        class="control-btn"
-        id="prevBtn"
-        aria-label="Previous">
-
-        <svg viewBox="0 0 24 24">
-
-          <path d="M19 6v12"/>
-          <path d="M16 12 5 5v14z"/>
-
-        </svg>
-
-      </button>
-
-
-      <!-- PLAY -->
-
-      <button
-        class="control-btn play-btn"
-        id="playBtn"
-        aria-label="Play">
-
-        <svg
-          id="playIcon"
-          viewBox="0 0 24 24">
-
-          <path
-            fill="currentColor"
-            stroke="none"
-            d="M8 5v14l11-7z"/>
-
-        </svg>
-
-      </button>
-
-
-      <!-- NEXT -->
-
-      <button
-        class="control-btn"
-        id="nextBtn"
-        aria-label="Next">
-
-        <svg viewBox="0 0 24 24">
-
-          <path d="M5 6v12"/>
-          <path d="m8 12 11-7v14z"/>
-
-        </svg>
-
-      </button>
-
-
-      <!-- PLAYLIST -->
-
-      <button
-        class="control-btn"
-        id="playlistBtn"
-        aria-label="Open playlist">
-
-        <svg viewBox="0 0 24 24">
-
-          <path d="M4 6h12"/>
-          <path d="M4 12h12"/>
-          <path d="M4 18h8"/>
-          <path d="m17 14 4 3-4 3z"/>
-
-        </svg>
-
-      </button>
 
     </div>
 
@@ -1335,31 +1598,30 @@ footer{
 </section>
 
 
-<!-- ================= BHAGWAN ================= -->
+<!-- =========================
+     BHAGWAN
+========================= -->
 
 <section class="card">
 
-  <h2 class="section-title">
-    🛕 हमारे भगवान
-  </h2>
+  <h2>🛕 हमारे भगवान</h2>
+
+  <div class="deity-grid">
 
 
-  <div class="gods">
-
-
-    <div class="god">
+    <div class="deity-card">
 
       <img
-        src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=900&q=85"
+        src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=800&q=85"
         alt="Mahadev">
 
-      <div class="god-content">
+      <div class="deity-info">
 
-        <div class="god-name">
-          महादेव
+        <div class="deity-name">
+          🔱 महादेव
         </div>
 
-        <div class="god-mantra">
+        <div class="deity-mantra">
           ॐ नमः शिवाय
         </div>
 
@@ -1368,19 +1630,19 @@ footer{
     </div>
 
 
-    <div class="god">
+    <div class="deity-card">
 
       <img
-        src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=900&q=85"
+        src="https://images.unsplash.com/photo-1604608672516-f1b9e3a7c5d8?auto=format&fit=crop&w=800&q=85"
         alt="Shri Ram">
 
-      <div class="god-content">
+      <div class="deity-info">
 
-        <div class="god-name">
-          श्री राम
+        <div class="deity-name">
+          🙏 श्री राम
         </div>
 
-        <div class="god-mantra">
+        <div class="deity-mantra">
           जय श्री राम
         </div>
 
@@ -1389,19 +1651,19 @@ footer{
     </div>
 
 
-    <div class="god">
+    <div class="deity-card">
 
       <img
-        src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=85"
-        alt="Shri Krishna">
+        src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=85"
+        alt="Temple">
 
-      <div class="god-content">
+      <div class="deity-info">
 
-        <div class="god-name">
-          श्री कृष्ण
+        <div class="deity-name">
+          🪷 श्री कृष्ण
         </div>
 
-        <div class="god-mantra">
+        <div class="deity-mantra">
           राधे राधे
         </div>
 
@@ -1410,19 +1672,19 @@ footer{
     </div>
 
 
-    <div class="god">
+    <div class="deity-card">
 
       <img
-        src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85"
+        src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=85"
         alt="Hanuman">
 
-      <div class="god-content">
+      <div class="deity-info">
 
-        <div class="god-name">
-          हनुमान जी
+        <div class="deity-name">
+          🚩 हनुमान जी
         </div>
 
-        <div class="god-mantra">
+        <div class="deity-mantra">
           जय बजरंगबली
         </div>
 
@@ -1435,28 +1697,27 @@ footer{
 </section>
 
 
-<!-- ================= SHAYARI ================= -->
+<!-- =========================
+     SHAYARI
+========================= -->
 
 <section class="card">
 
-  <h2 class="section-title">
-    🌸 भक्ति शायरी
-  </h2>
+  <h2>🌸 भक्ति शायरी</h2>
 
+  <div class="shayari-card">
 
-  <div class="shayari-list">
-
-    <div class="shayari-item">
+    <div class="shayari-box">
       जिसके सिर पर हाथ महादेव का हो,<br>
       उसे डर कैसा और चिंता कैसी। 🔱
     </div>
 
-    <div class="shayari-item">
+    <div class="shayari-box">
       नाम प्रभु का लेते रहो,<br>
       मन में प्रेम जगाते रहो। 🙏
     </div>
 
-    <div class="shayari-item">
+    <div class="shayari-box">
       कर्म करते रहो,<br>
       बाकी सब महादेव पर छोड़ दो। 🕉️
     </div>
@@ -1466,78 +1727,114 @@ footer{
 </section>
 
 
-<!-- ================= NAAM JAP ================= -->
+<!-- =========================
+     NAAM JAP
+========================= -->
 
 <section class="card jap-card">
 
-  <h2 class="section-title">
-    🙏 नाम जाप
-  </h2>
+  <h2>🙏 नाम जाप</h2>
 
-  <div class="selected-label">
+  <div class="jap-selected-label">
     चुना हुआ नाम
   </div>
 
   <div
-    class="selected-name"
+    class="jap-selected"
     id="selectedName">
-    🔱 ॐ नमः शिवाय
+
+    ॐ नमः शिवाय 🔱
+
   </div>
 
   <div
-    class="counter"
-    id="counter">
+    class="jap-count"
+    id="japCount">
+
     0
+
   </div>
 
   <button
     class="jap-btn"
-    id="japBtn">
+    id="japBtn"
+    type="button">
+
     🔥 जाप करें
+
   </button>
 
 </section>
 
 
-<!-- ================= NAMES ================= -->
+<!-- =========================
+     GOD NAMES
+========================= -->
 
 <section class="card">
 
-  <h2 class="section-title">
-    🕉️ भगवान के नाम
-  </h2>
-
+  <h2>🕉️ भगवान के नाम</h2>
 
   <div class="name-grid">
 
-    <button class="name-btn selected"
-      data-name="🔱 ॐ नमः शिवाय">
+
+    <button
+      class="name-option selected"
+      data-name="ॐ नमः शिवाय 🔱"
+      type="button">
+
       🔱 ॐ नमः शिवाय
+
     </button>
 
-    <button class="name-btn"
-      data-name="🙏 श्री राम जय राम">
+
+    <button
+      class="name-option"
+      data-name="श्री राम जय राम 🙏"
+      type="button">
+
       🙏 श्री राम जय राम
+
     </button>
 
-    <button class="name-btn"
-      data-name="🪷 राधे राधे">
+
+    <button
+      class="name-option"
+      data-name="राधे राधे 🪷"
+      type="button">
+
       🪷 राधे राधे
+
     </button>
 
-    <button class="name-btn"
-      data-name="🦚 हरे कृष्ण">
+
+    <button
+      class="name-option"
+      data-name="हरे कृष्ण 🦚"
+      type="button">
+
       🦚 हरे कृष्ण
+
     </button>
 
-    <button class="name-btn"
-      data-name="🚩 जय बजरंगबली">
+
+    <button
+      class="name-option"
+      data-name="जय बजरंगबली 🚩"
+      type="button">
+
       🚩 जय बजरंगबली
+
     </button>
 
-    <button class="name-btn"
-      data-name="🌺 जय माता दी">
+
+    <button
+      class="name-option"
+      data-name="जय माता दी 🌺"
+      type="button">
+
       🌺 जय माता दी
+
     </button>
 
   </div>
@@ -1545,11 +1842,13 @@ footer{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div class="footer-title">
+  <div class="footer-brand">
     Bhajan Wala
   </div>
 
@@ -1557,27 +1856,29 @@ footer{
     Made By Anubhav Verma With Love ❤️
   </div>
 
-  <div class="footer-line"></div>
-
   <div class="footer-sub">
     BHAKTI • BHAJAN • BHAGWAN
   </div>
+
+  <div class="footer-line"></div>
 
 </footer>
 
 </main>
 
 
-<!-- TOAST -->
+<!-- JAP TOAST -->
 
 <div
-  class="toast"
-  id="toast">
-  🙏 नाम जाप किया
+  id="japToast"
+  class="jap-toast">
+
+  🙏 भगवान का नाम लिया
+
 </div>
 
 
-<!-- AUDIO -->
+<!-- BELL AUDIO -->
 
 <audio
   id="bellAudio"
@@ -1590,16 +1891,16 @@ footer{
 </audio>
 
 
-<!-- YOUTUBE API -->
+<!-- YOUTUBE IFRAME API -->
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
 
 <script>
 
-/* =========================================================
+/* ==========================================
    TIME
-========================================================= */
+========================================== */
 
 function updateTime(){
 
@@ -1620,226 +1921,66 @@ updateTime();
 setInterval(updateTime,30000);
 
 
-/* =========================================================
-   BELL
-========================================================= */
-
-const bellAudio =
-  document.getElementById("bellAudio");
-
-document
-  .getElementById("bellBtn")
-  .addEventListener("click",function(){
-
-    bellAudio.currentTime = 0;
-
-    bellAudio.play().catch(function(){
-
-      alert(
-        "Mandir Ghanti.mp3 file website ke saath upload honi chahiye."
-      );
-
-    });
-
-  });
-
-
-/* =========================================================
-   ROTATING SHAYARI
-========================================================= */
-
-const shayaris = [
-
-  "भक्ति में जो सुकून है,<br>वो दुनिया की किसी दौलत में नहीं। 🙏",
-
-  "राम नाम से बड़ा सहारा,<br>इस दुनिया में कोई नहीं। 🚩",
-
-  "जहाँ महादेव का नाम है,<br>वहीं मन को आराम है। 🔱",
-
-  "राधे राधे कहते रहो,<br>मन में प्रेम भरते रहो। 🪷",
-
-  "कृष्ण नाम में ऐसी मिठास,<br>जो हर पल दे मन को विश्वास। 🦚",
-
-  "कर्म करते रहो,<br>बाकी सब भगवान पर छोड़ दो। 🕉️"
-
-];
-
-let shayariIndex = 0;
-
-function changeShayari(){
-
-  const box =
-    document.getElementById("heroShayari");
-
-  box.style.opacity = "0";
-
-  setTimeout(function(){
-
-    shayariIndex =
-      (shayariIndex + 1) % shayaris.length;
-
-    box.innerHTML =
-      shayaris[shayariIndex];
-
-    box.style.opacity = "1";
-
-  },450);
-
-}
-
-setInterval(changeShayari,5000);
-
-
-/* =========================================================
-   NAAM JAP
-========================================================= */
-
-let count = 0;
-
-let selectedName =
-  "🔱 ॐ नमः शिवाय";
-
-const counter =
-  document.getElementById("counter");
-
-const selectedNameEl =
-  document.getElementById("selectedName");
-
-const toast =
-  document.getElementById("toast");
-
-
-function showToast(text){
-
-  toast.textContent = text;
-
-  toast.classList.add("show");
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer =
-    setTimeout(function(){
-
-      toast.classList.remove("show");
-
-    },1500);
-
-}
-
-
-document
-  .querySelectorAll(".name-btn")
-  .forEach(function(button){
-
-    button.addEventListener("click",function(){
-
-      document
-        .querySelectorAll(".name-btn")
-        .forEach(function(btn){
-
-          btn.classList.remove("selected");
-
-        });
-
-      button.classList.add("selected");
-
-      selectedName =
-        button.dataset.name;
-
-      selectedNameEl.textContent =
-        selectedName;
-
-      showToast("🙏 नाम चुना गया");
-
-    });
-
-  });
-
-
-document
-  .getElementById("japBtn")
-  .addEventListener("click",function(){
-
-    count++;
-
-    counter.textContent =
-      count;
-
-    showToast(
-      "🙏 " +
-      selectedName +
-      " • जाप " +
-      count
-    );
-
-  });
-
-
-/* =========================================================
-   YOUTUBE PLAYER
-========================================================= */
-
-const PLAYLIST_ID =
-  "PLV74Ia5Eq20Y";
+/* ==========================================
+   YOUTUBE
+========================================== */
 
 let player = null;
-
+let playerReady = false;
 let progressTimer = null;
 
-let shuffleOn = false;
+const playlistId = "PLV74Ia5Eq20Y";
 
-
-/*
-  YouTube API ready
-*/
 
 function onYouTubeIframeAPIReady(){
 
-  player =
-    new YT.Player(
-      "ytplayer",
-      {
+  player = new YT.Player(
+    "youtubePlayer",
+    {
+      width:"100%",
+      height:"100%",
 
-        width:"100%",
-        height:"100%",
+      playerVars:{
+        autoplay:0,
+        controls:0,
+        disablekb:1,
+        modestbranding:1,
+        rel:0,
+        playsinline:1,
+        iv_load_policy:3,
+        fs:0,
+        listType:"playlist",
+        list:playlistId
+      },
 
-        playerVars:{
-          listType:"playlist",
-          list:PLAYLIST_ID,
-          controls:0,
-          rel:0,
-          modestbranding:1,
-          playsinline:1,
-          enablejsapi:1
-        },
-
-        events:{
-          onReady:onPlayerReady,
-          onStateChange:onPlayerStateChange
-        }
-
+      events:{
+        onReady:onPlayerReady,
+        onStateChange:onPlayerStateChange
       }
-    );
-
+    }
+  );
 }
 
-
-/* PLAYER READY */
 
 function onPlayerReady(){
 
+  playerReady = true;
+
+  try{
+
+    player.setVolume(100);
+
+  }catch(e){}
+
   updateSongInfo();
 
-  startProgressTimer();
-
+  startProgressLoop();
 }
 
 
-/* STATE CHANGE */
-
 function onPlayerStateChange(event){
 
-  updatePlayIcon();
+  updatePlayButton();
 
   if(
     event.data === YT.PlayerState.PLAYING
@@ -1850,25 +1991,179 @@ function onPlayerStateChange(event){
   }
 
   if(
-    event.data === YT.PlayerState.CUED
+    event.data === YT.PlayerState.ENDED
   ){
 
-    updateSongInfo();
+    updatePlayButton();
 
   }
 
 }
 
 
-/* =========================================================
+function startProgressLoop(){
+
+  if(progressTimer){
+    clearInterval(progressTimer);
+  }
+
+  progressTimer = setInterval(
+    updateProgress,
+    500
+  );
+}
+
+
+function updateProgress(){
+
+  if(!playerReady || !player){
+    return;
+  }
+
+  try{
+
+    const current =
+      player.getCurrentTime() || 0;
+
+    const total =
+      player.getDuration() || 0;
+
+    document.getElementById("currentTime")
+      .textContent = formatTime(current);
+
+    document.getElementById("duration")
+      .textContent = formatTime(total);
+
+    const progress =
+      document.getElementById("progress");
+
+    if(total > 0){
+
+      progress.value =
+        (current / total) * 100;
+
+    }
+
+  }catch(e){}
+
+}
+
+
+function formatTime(seconds){
+
+  seconds = Math.floor(seconds || 0);
+
+  const minutes =
+    Math.floor(seconds / 60);
+
+  const secs =
+    seconds % 60;
+
+  return (
+    minutes +
+    ":" +
+    String(secs).padStart(2,"0")
+  );
+}
+
+
+/* ==========================================
+   COVER / VIDEO FLIP
+========================================== */
+
+const musicPlayer =
+  document.getElementById("musicPlayer");
+
+const coverPlay =
+  document.getElementById("coverPlay");
+
+const videoTap =
+  document.getElementById("videoTap");
+
+
+function showVideo(){
+
+  musicPlayer.classList.add("flipped");
+
+  if(playerReady){
+
+    setTimeout(function(){
+
+      try{
+
+        player.playVideo();
+
+      }catch(e){}
+
+      updatePlayButton();
+
+    },300);
+
+  }
+
+}
+
+
+function showCover(){
+
+  musicPlayer.classList.remove("flipped");
+
+  if(playerReady){
+
+    try{
+
+      player.pauseVideo();
+
+    }catch(e){}
+
+  }
+
+  updatePlayButton();
+
+}
+
+
+coverPlay.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    showVideo();
+
+  }
+);
+
+
+videoTap.addEventListener(
+  "click",
+  function(){
+
+    showCover();
+
+  }
+);
+
+
+/* ==========================================
    PLAY / PAUSE
-========================================================= */
+========================================== */
 
-document
-  .getElementById("playBtn")
-  .addEventListener("click",function(){
+const playBtn =
+  document.getElementById("playBtn");
 
-    if(!player) return;
+const playIcon =
+  document.getElementById("playIcon");
+
+
+function togglePlay(){
+
+  if(!playerReady){
+    showVideo();
+    return;
+  }
+
+  try{
 
     const state =
       player.getPlayerState();
@@ -1885,326 +2180,484 @@ document
 
     }
 
-  });
-
-
-/* =========================================================
-   PLAY ICON
-========================================================= */
-
-function updatePlayIcon(){
-
-  if(!player) return;
-
-  const state =
-    player.getPlayerState();
-
-  const icon =
-    document.getElementById("playIcon");
-
-  if(
-    state === YT.PlayerState.PLAYING
-  ){
-
-    icon.innerHTML = `
-      <rect
-        x="7"
-        y="5"
-        width="4"
-        height="14"
-        rx="1"
-        fill="currentColor"
-        stroke="none">
-      </rect>
-
-      <rect
-        x="13"
-        y="5"
-        width="4"
-        height="14"
-        rx="1"
-        fill="currentColor"
-        stroke="none">
-      </rect>
-    `;
-
-  }else{
-
-    icon.innerHTML = `
-      <path
-        fill="currentColor"
-        stroke="none"
-        d="M8 5v14l11-7z">
-      </path>
-    `;
-
-  }
+  }catch(e){}
 
 }
 
 
-/* =========================================================
-   NEXT / PREVIOUS
-========================================================= */
+playBtn.addEventListener(
+  "click",
+  function(e){
 
-document
-  .getElementById("nextBtn")
-  .addEventListener("click",function(){
+    e.stopPropagation();
 
-    if(!player) return;
+    togglePlay();
 
-    player.nextVideo();
-
-  });
+  }
+);
 
 
-document
-  .getElementById("prevBtn")
-  .addEventListener("click",function(){
+function updatePlayButton(){
 
-    if(!player) return;
+  if(!playerReady){
+    return;
+  }
 
-    player.previousVideo();
+  try{
 
-  });
+    const state =
+      player.getPlayerState();
 
+    if(
+      state === YT.PlayerState.PLAYING
+    ){
 
-/* =========================================================
-   SHUFFLE
-========================================================= */
+      playIcon.style.borderTop =
+        "0";
 
-document
-  .getElementById("shuffleBtn")
-  .addEventListener("click",function(){
+      playIcon.style.borderBottom =
+        "0";
 
-    if(!player) return;
+      playIcon.style.borderLeft =
+        "0";
 
-    shuffleOn =
-      !shuffleOn;
+      playIcon.style.width =
+        "17px";
 
-    if(shuffleOn){
+      playIcon.style.height =
+        "20px";
 
-      player.setShuffle(true);
+      playIcon.style.borderLeft =
+        "6px solid currentColor";
 
-      this.style.background =
-        "rgba(255,130,0,.28)";
+      playIcon.style.borderRight =
+        "6px solid currentColor";
 
-      this.style.borderColor =
-        "rgba(255,157,0,.65)";
-
-      showToast("🔀 Shuffle ON");
+      playIcon.style.margin =
+        "0";
 
     }else{
 
-      player.setShuffle(false);
+      playIcon.removeAttribute("style");
 
-      this.style.background =
-        "rgba(255,255,255,.075)";
-
-      this.style.borderColor =
-        "rgba(255,255,255,.22)";
-
-      showToast("🔀 Shuffle OFF");
+      playIcon.className =
+        "play-icon";
 
     }
 
-  });
+  }catch(e){}
+
+}
 
 
-/* =========================================================
+/* ==========================================
+   PREVIOUS / NEXT
+========================================== */
+
+document.getElementById("prevBtn")
+.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    if(!playerReady) return;
+
+    try{
+
+      player.previousVideo();
+      updateSongInfo();
+
+    }catch(e){}
+
+  }
+);
+
+
+document.getElementById("nextBtn")
+.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    if(!playerReady) return;
+
+    try{
+
+      player.nextVideo();
+      updateSongInfo();
+
+    }catch(e){}
+
+  }
+);
+
+
+/* ==========================================
+   SHUFFLE
+========================================== */
+
+let shuffled = false;
+
+document.getElementById("shuffleBtn")
+.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
+
+    shuffled = !shuffled;
+
+    this.style.background =
+      shuffled
+      ? "rgba(255,130,0,.30)"
+      : "rgba(255,255,255,.08)";
+
+    if(playerReady){
+
+      try{
+
+        player.setShuffle(shuffled);
+
+      }catch(e){}
+
+    }
+
+  }
+);
+
+
+/* ==========================================
    PLAYLIST BUTTON
-========================================================= */
+========================================== */
 
-document
-  .getElementById("playlistBtn")
-  .addEventListener("click",function(){
+document.getElementById("playlistBtn")
+.addEventListener(
+  "click",
+  function(e){
+
+    e.stopPropagation();
 
     window.open(
-      "https://youtube.com/playlist?list=" +
-      PLAYLIST_ID,
+      "https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS",
       "_blank"
     );
 
-  });
+  }
+);
 
 
-/* =========================================================
-   SONG INFORMATION
-========================================================= */
+/* ==========================================
+   CUSTOM PROGRESS
+========================================== */
+
+document.getElementById("progress")
+.addEventListener(
+  "input",
+  function(){
+
+    if(!playerReady){
+      return;
+    }
+
+    try{
+
+      const total =
+        player.getDuration();
+
+      const newTime =
+        total *
+        (this.value / 100);
+
+      player.seekTo(
+        newTime,
+        true
+      );
+
+    }catch(e){}
+
+  }
+);
+
+
+/* ==========================================
+   SONG INFO
+========================================== */
 
 function updateSongInfo(){
 
-  if(!player) return;
+  if(!playerReady || !player){
+    return;
+  }
 
   try{
 
     const data =
       player.getVideoData();
 
-    if(
-      data &&
-      data.title
-    ){
+    if(!data){
+      return;
+    }
 
-      document
-        .getElementById("songTitle")
-        .textContent =
-        data.title;
+    const title =
+      data.title || "Bhajan Wala";
 
-      document
-        .getElementById("songChannel")
-        .textContent =
-        data.author || "YouTube";
+    const videoId =
+      data.video_id;
 
-      if(data.video_id){
+    document.getElementById("coverTitle")
+      .textContent = title;
 
-        document
-          .getElementById("cover")
-          .src =
-          "https://i.ytimg.com/vi/" +
-          data.video_id +
-          "/hqdefault.jpg";
+    document.getElementById("coverArtist")
+      .textContent =
+      (data.author || "YouTube") +
+      " • YouTube";
 
-      }
+
+    if(videoId){
+
+      const thumb =
+        "https://i.ytimg.com/vi/" +
+        videoId +
+        "/hqdefault.jpg";
+
+      document.getElementById("coverImage")
+        .src = thumb;
+
+      document.getElementById("coverThumb")
+        .src = thumb;
 
     }
 
-  }catch(error){
+  }catch(e){}
 
-    console.log(
-      "Song info waiting..."
+}
+
+
+/* ==========================================
+   GHANTI
+========================================== */
+
+const bellBtn =
+  document.getElementById("bellBtn");
+
+const bellAudio =
+  document.getElementById("bellAudio");
+
+
+bellBtn.addEventListener(
+  "click",
+  function(){
+
+    bellBtn.classList.remove("ringing");
+
+    void bellBtn.offsetWidth;
+
+    bellBtn.classList.add("ringing");
+
+
+    if(bellAudio){
+
+      bellAudio.currentTime = 0;
+
+      bellAudio.play()
+      .catch(function(){
+
+        // Audio file missing হলে
+        // कोई layout नहीं टूटेगा
+
+      });
+
+    }
+
+
+    setTimeout(
+      function(){
+
+        bellBtn.classList.remove("ringing");
+
+      },
+      700
     );
 
   }
-
-}
-
-
-/* =========================================================
-   PROGRESS
-========================================================= */
-
-function startProgressTimer(){
-
-  clearInterval(progressTimer);
-
-  progressTimer =
-    setInterval(updateProgress,500);
-
-}
+);
 
 
-function updateProgress(){
+/* ==========================================
+   ROTATING SHAYARI
+========================================== */
 
-  if(!player) return;
+const shayaris = [
 
-  try{
+  `भक्ति में जो सुकून है,<br>
+   वो दुनिया की किसी दौलत में नहीं। 🙏`,
 
-    const current =
-      player.getCurrentTime();
+  `राम नाम से बड़ा सहारा,<br>
+   इस दुनिया में कोई नहीं। 🚩`,
 
-    const duration =
-      player.getDuration();
+  `जिसके सिर पर हाथ महादेव का हो,<br>
+   उसे डर कैसा और चिंता कैसी। 🔱`,
 
-    if(
-      !duration ||
-      duration <= 0
-    ) return;
+  `राधे राधे बोलते रहो,<br>
+   मन में प्रेम घोलते रहो। 🪷`,
 
-    const percent =
-      Math.min(
-        100,
-        (current / duration) * 100
-      );
+  `कर्म करते रहो,<br>
+   बाकी सब महादेव पर छोड़ दो। 🕉️`,
 
-    document
-      .getElementById("progressFill")
-      .style.width =
-      percent + "%";
+  `जहाँ भगवान का नाम होता है,<br>
+   वहाँ मन को सुकून मिलता है। 🙏`
 
-    document
-      .getElementById("progressDot")
-      .style.left =
-      percent + "%";
+];
 
-    document
-      .getElementById("currentTime")
-      .textContent =
-      formatTime(current);
+let shayariIndex = 0;
 
-    document
-      .getElementById("duration")
-      .textContent =
-      formatTime(duration);
-
-  }catch(error){
-
-    /* Player not ready yet */
-
-  }
-
-}
+const heroShayari =
+  document.getElementById("heroShayari");
 
 
-function formatTime(seconds){
+setInterval(
+  function(){
 
-  seconds =
-    Math.floor(seconds || 0);
+    heroShayari.classList.add("fade-out");
 
-  const minutes =
-    Math.floor(seconds / 60);
+    setTimeout(
+      function(){
 
-  const secs =
-    seconds % 60;
+        shayariIndex =
+          (shayariIndex + 1) %
+          shayaris.length;
 
-  return (
-    minutes +
-    ":" +
-    String(secs).padStart(2,"0")
-  );
+        heroShayari.innerHTML =
+          shayaris[shayariIndex];
 
-}
+        heroShayari.classList.remove(
+          "fade-out"
+        );
+
+        heroShayari.classList.add(
+          "fade-in"
+        );
+
+      },
+      450
+    );
+
+  },
+  4500
+);
 
 
-/* =========================================================
-   CLICK ON PROGRESS BAR
-========================================================= */
+/* ==========================================
+   NAAM JAP
+========================================== */
+
+let japCount = 0;
+
+let selectedName =
+  "ॐ नमः शिवाय 🔱";
+
+
+const selectedNameEl =
+  document.getElementById("selectedName");
+
+const japCountEl =
+  document.getElementById("japCount");
+
+const japBtn =
+  document.getElementById("japBtn");
+
+const japToast =
+  document.getElementById("japToast");
+
+
+/* SELECT NAME */
 
 document
-  .getElementById("progress")
-  .addEventListener("click",function(event){
+.querySelectorAll(".name-option")
+.forEach(
+  function(button){
 
-    if(!player) return;
+    button.addEventListener(
+      "click",
+      function(){
 
-    const rect =
-      this.getBoundingClientRect();
+        document
+        .querySelectorAll(".name-option")
+        .forEach(
+          function(item){
+            item.classList.remove(
+              "selected"
+            );
+          }
+        );
 
-    const x =
-      event.clientX -
-      rect.left;
+        this.classList.add(
+          "selected"
+        );
 
-    const ratio =
-      Math.max(
-        0,
-        Math.min(
-          1,
-          x / rect.width
-        )
-      );
+        selectedName =
+          this.dataset.name;
 
-    const duration =
-      player.getDuration();
+        selectedNameEl.textContent =
+          selectedName;
 
-    if(duration){
+        japCount = 0;
 
-      player.seekTo(
-        duration * ratio,
-        true
-      );
+        japCountEl.textContent =
+          "0";
 
-    }
+      }
+    );
 
-  });
+  }
+);
+
+
+/* JAP */
+
+japBtn.addEventListener(
+  "click",
+  function(){
+
+    japCount++;
+
+    japCountEl.textContent =
+      japCount;
+
+
+    /* SMALL BOTTOM PILL */
+
+    japToast.textContent =
+      "🙏 " +
+      selectedName.replace(
+        /[^\u0900-\u097F\s]/g,
+        ""
+      ).trim() +
+      " • जाप किया";
+
+
+    japToast.classList.remove("show");
+
+    void japToast.offsetWidth;
+
+    japToast.classList.add("show");
+
+
+    setTimeout(
+      function(){
+
+        japToast.classList.remove(
+          "show"
+        );
+
+      },
+      1500
+    );
+
+  }
+);
 
 </script>
 
