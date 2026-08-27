@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Bhajan Wala - Bhajan, Bhakti Shayari, Bhagwan ke naam aur Mandir ki Ghanti.">
-<meta name="theme-color" content="#7b0018">
+<meta name="description" content="Bhajan Wala - Bhakti, Bhajan aur Bhagwan ke naam.">
+<meta name="theme-color" content="#5b0010">
 
-<title>भजन वाला 🛕 | Bhajan & Bhakti</title>
+<title>Bhajan Wala 🛕 | Bhakti • Bhajan • Bhagwan</title>
 
 <style>
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
 }
 
 html{
@@ -21,899 +19,1266 @@ html{
 }
 
 body{
+  margin:0;
+  color:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 20% 5%,rgba(255,190,70,.35),transparent 25%),
+    radial-gradient(circle at 90% 25%,rgba(255,70,50,.30),transparent 30%),
+    linear-gradient(145deg,#25000a 0%,#650014 38%,#b91618 70%,#ee6b13 100%);
   min-height:100vh;
-  color:white;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:#240008;
   overflow-x:hidden;
 }
 
-/* MAIN */
-
-.app{
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(55,0,12,.30),
-      rgba(15,0,5,.94)
-    ),
-    url("https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1600&q=85")
-    center/cover fixed;
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
 }
 
-.app:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
+/* ================= TOP BAR ================= */
 
-  background:
-    radial-gradient(
-      circle at 50% 5%,
-      rgba(255,195,75,.35),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 10% 40%,
-      rgba(255,70,30,.25),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 90% 60%,
-      rgba(110,20,255,.20),
-      transparent 30%
-    ),
-    linear-gradient(
-      180deg,
-      transparent,
-      #160006 92%
-    );
-}
-
-/* TOP */
-
-.top{
-  position:relative;
-  z-index:5;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:16px 18px 5px;
-
-  max-width:720px;
+.topbar{
+  max-width:850px;
   margin:auto;
+  padding:18px 18px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.time{
+.live{
+  display:flex;
+  align-items:center;
+  gap:8px;
   font-size:14px;
-  font-weight:700;
-
-  text-shadow:
-    0 2px 10px #000;
+  font-weight:800;
+  letter-spacing:.5px;
 }
 
-.youtube-btn{
-  width:40px;
-  height:40px;
-
+.green-dot{
+  width:11px;
+  height:11px;
   border-radius:50%;
+  background:#25e85d;
+  box-shadow:
+    0 0 0 4px rgba(37,232,93,.13),
+    0 0 16px rgba(37,232,93,.9);
+  animation:pulse 1.5s infinite;
+}
 
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(.75);opacity:.65}
+}
+
+.top-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.circle-btn{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);
+  background:rgba(0,0,0,.25);
+  color:#fff;
   display:grid;
   place-items:center;
-
-  color:white;
   text-decoration:none;
-
-  background:rgba(0,0,0,.35);
-
-  border:1px solid rgba(255,255,255,.38);
-
-  font-size:17px;
-
-  box-shadow:
-    0 7px 20px rgba(0,0,0,.30);
-
-  transition:.2s;
+  font-size:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
-.youtube-btn:active{
-  transform:scale(.90);
-}
-
-/* MAIN */
+/* ================= MAIN ================= */
 
 main{
-  position:relative;
-  z-index:2;
-
-  max-width:720px;
+  max-width:850px;
   margin:auto;
-
-  padding:8px 16px 35px;
+  padding:20px 15px 50px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   text-align:center;
-  padding:16px 5px 8px;
+  padding:20px 5px 15px;
 }
 
 .om{
-  font-size:44px;
-
-  text-shadow:
-    0 4px 18px rgba(255,170,40,.45);
+  font-size:58px;
+  line-height:1;
+  text-shadow:0 6px 20px rgba(0,0,0,.3);
 }
 
-/* BRAND */
+h1{
+  margin:8px 0 5px;
+  font-size:clamp(48px,13vw,86px);
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-3px;
+  text-shadow:0 7px 25px rgba(0,0,0,.35);
+}
 
 .brand{
-  margin-top:4px;
-
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    "Times New Roman",
-    serif;
-
-  font-size:52px;
-  line-height:.95;
-
-  font-weight:900;
-
-  letter-spacing:-2px;
-
-  text-shadow:
-    0 5px 22px rgba(0,0,0,.65);
-}
-
-.tagline{
-  margin-top:9px;
-
-  font-size:11px;
-
-  letter-spacing:3px;
-
-  opacity:.80;
-}
-
-/* BELL */
-
-.bell-wrap{
-  width:min(520px,100%);
-
-  margin:25px auto 17px;
-}
-
-.bell{
-  width:100%;
-
-  padding:7px;
-
-  border:1px solid rgba(255,255,255,.30);
-
-  border-radius:25px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffad16,
-      #df3d09
-    );
-
-  box-shadow:
-    0 15px 35px rgba(0,0,0,.35),
-    inset 0 1px rgba(255,255,255,.40);
-
-  cursor:pointer;
-}
-
-.bell:active{
-  transform:scale(.96);
-}
-
-.bell-inner{
-  min-height:52px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:12px;
-}
-
-.bell-icon{
-  width:40px;
-  height:40px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.18);
-
-  font-size:22px;
-}
-
-.bell-title{
-  font-size:18px;
-  font-weight:900;
-}
-
-.bell-sub{
-  font-size:10px;
-  opacity:.82;
-  margin-top:2px;
-}
-
-/* BELL ANIMATION */
-
-.ring{
-  animation:ring .55s ease;
-}
-
-@keyframes ring{
-
-  0%,100%{
-    transform:rotate(0) scale(1);
-  }
-
-  20%{
-    transform:rotate(-5deg) scale(1.03);
-  }
-
-  40%{
-    transform:rotate(5deg) scale(1.06);
-  }
-
-  60%{
-    transform:rotate(-3deg) scale(1.03);
-  }
-
-}
-
-/* MANTRA */
-
-.mantra{
-  min-height:30px;
-
-  font-size:16px;
-
-  font-weight:850;
-
-  text-shadow:
-    0 2px 12px #000;
-}
-
-.fade{
-  animation:fade 4.2s ease-in-out;
-}
-
-@keyframes fade{
-
-  0%{
-    opacity:0;
-    transform:translateY(6px);
-  }
-
-  15%,80%{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-  100%{
-    opacity:0;
-    transform:translateY(-6px);
-  }
-
-}
-
-/* CARDS */
-
-.card{
-  margin:14px 0;
-
-  padding:14px;
-
-  border-radius:24px;
-
-  background:
-    rgba(27,0,7,.56);
-
-  border:
-    1px solid rgba(255,255,255,.17);
-
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.30);
-
-  backdrop-filter:blur(14px);
-}
-
-.title{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin:
-    0 3px 10px;
-}
-
-.title h2{
-  font-size:18px;
-  font-weight:900;
-}
-
-.title span{
-  font-size:10px;
-  opacity:.60;
-}
-
-/* YOUTUBE PLAYER */
-
-.player{
-  overflow:hidden;
-
-  border-radius:17px;
-
-  background:#090909;
-
-  aspect-ratio:16/9;
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.35);
-}
-
-.player iframe{
-  width:100%;
-  height:100%;
-
-  border:0;
-}
-
-/* SHAYARI */
-
-.shayari{
-  min-height:112px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  padding:8px;
-
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    "Times New Roman",
-    serif;
-
-  font-size:19px;
-
-  line-height:1.65;
-
+  margin-top:10px;
+  font-size:13px;
+  letter-spacing:5px;
+  opacity:.9;
   font-weight:700;
 }
 
-.shayari-text{
-  transition:.35s;
-}
-
-.hide{
-  opacity:0;
-
-  transform:
-    translateY(8px);
-}
-
-/* GOD NAMES */
-
-.names{
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:9px;
-}
-
-.name{
-  padding:13px 8px;
-
-  text-align:center;
-
-  border-radius:15px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.12),
-      rgba(255,120,20,.09)
-    );
-
-  border:
-    1px solid rgba(255,255,255,.12);
-
+.owner{
+  margin-top:8px;
   font-size:14px;
-
-  font-weight:850;
-
-  transition:.2s;
+  font-weight:700;
+  opacity:.8;
 }
 
-.name:active{
-  transform:scale(.96);
+/* ================= BELL ================= */
+
+.bell-wrap{
+  margin:30px auto 25px;
+  max-width:620px;
+  padding:7px;
+  border-radius:34px;
+  background:rgba(35,5,10,.6);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 18px 55px rgba(0,0,0,.3);
 }
 
-/* JAP COUNTER */
-
-.counter{
-  text-align:center;
-
-  margin-top:12px;
-}
-
-.counter-number{
-  font-size:34px;
-
-  font-weight:950;
-}
-
-.counter-label{
-  font-size:11px;
-
-  opacity:.62;
-}
-
-.jap{
+.bell-btn{
   width:100%;
-
-  padding:11px;
-
-  margin-top:9px;
-
-  border:
-    1px solid rgba(255,255,255,.18);
-
-  border-radius:14px;
-
-  color:white;
-
-  background:
-    rgba(255,255,255,.08);
-
-  font-weight:850;
-
-  cursor:pointer;
-}
-
-/* SHARE */
-
-.share{
-  width:100%;
-
-  padding:11px;
-
-  margin-top:9px;
-
   border:0;
-
-  border-radius:14px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #a80024,
-      #e04b16
-    );
-
-  font-weight:850;
-
+  border-radius:27px;
+  padding:18px 20px;
+  color:#fff;
+  background:linear-gradient(135deg,#ffae00,#ff7300,#ed2e00);
+  font-size:22px;
+  font-weight:900;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.45),
+    0 8px 20px rgba(255,110,0,.2);
   cursor:pointer;
 }
 
-/* FOOTER */
-
-.footer{
-  text-align:center;
-
-  padding:
-    13px 20px 27px;
-
-  font-size:11px;
-
-  line-height:1.7;
-
-  opacity:.72;
-
-  position:relative;
-
-  z-index:2;
-}
-
-.footer strong{
+.bell-btn small{
   display:block;
-
-  font-family:
-    Georgia,
-    "Noto Serif Devanagari",
-    serif;
-
+  margin-top:5px;
   font-size:13px;
-
-  opacity:.98;
+  font-weight:500;
+  opacity:.9;
 }
 
-/* POPUP */
+/* ================= MANTRA PILLS ================= */
 
-.popup{
-  position:fixed;
+.mantras{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:15px auto 30px;
+}
 
-  left:50%;
-  bottom:22px;
+.mantra{
+  padding:10px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:15px;
+  font-weight:800;
+  backdrop-filter:blur(10px);
+}
 
-  z-index:50;
+/* ================= CARDS ================= */
 
-  transform:
-    translate(-50%,20px);
+.card{
+  margin:20px 0;
+  padding:18px;
+  border-radius:30px;
+  background:rgba(28,3,9,.56);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  backdrop-filter:blur(12px);
+}
 
-  opacity:0;
+.card-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:0 3px 17px;
+}
 
-  padding:10px 16px;
+.card-title h2{
+  margin:0;
+  font-size:23px;
+}
 
-  border-radius:25px;
-
-  background:
-    rgba(0,0,0,.86);
-
-  border:
-    1px solid rgba(255,255,255,.20);
-
+.card-title span{
   font-size:12px;
+  opacity:.65;
+  letter-spacing:1px;
+}
 
-  transition:.25s;
+/* ================= MUSIC PLAYER ================= */
 
-  white-space:nowrap;
+.music-player{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  background:#090909;
+  border:1px solid rgba(255,255,255,.15);
+}
 
+.youtube-hidden{
+  position:absolute;
+  width:1px;
+  height:1px;
+  left:-10000px;
+  top:-10000px;
+  opacity:0;
   pointer-events:none;
 }
 
-.popup.show{
-  opacity:1;
-
-  transform:
-    translate(-50%,0);
+.now-playing{
+  padding:24px 20px 18px;
+  min-height:150px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,150,0,.35),transparent 35%),
+    linear-gradient(145deg,#321016,#12060a);
 }
 
-/* MOBILE */
+.music-icon{
+  font-size:42px;
+  margin-bottom:10px;
+}
 
-@media(max-width:430px){
+.song-label{
+  font-size:12px;
+  color:#ffb52e;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.song-title{
+  margin-top:6px;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.song-status{
+  margin-top:6px;
+  font-size:12px;
+  opacity:.65;
+}
+
+.progress-area{
+  padding:0 18px 12px;
+  background:#090909;
+}
+
+.progress{
+  width:100%;
+  height:6px;
+  border-radius:20px;
+  appearance:none;
+  -webkit-appearance:none;
+  background:#3b3b3b;
+  outline:none;
+  cursor:pointer;
+}
+
+.progress::-webkit-slider-thumb{
+  appearance:none;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#ff9d00;
+  box-shadow:0 0 10px rgba(255,157,0,.8);
+}
+
+.time-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  opacity:.55;
+  margin-top:6px;
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:15px 15px 20px;
+  background:#090909;
+}
+
+.control{
+  width:50px;
+  height:50px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  background:#191919;
+  color:#fff;
+  font-size:21px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+}
+
+.play{
+  width:66px;
+  height:66px;
+  background:linear-gradient(135deg,#ffb000,#f04400);
+  border:0;
+  font-size:28px;
+  box-shadow:0 8px 25px rgba(255,100,0,.3);
+}
+
+.volume-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 20px 18px;
+  background:#090909;
+  opacity:.75;
+}
+
+.volume{
+  width:100%;
+}
+
+/* ================= DEITY PHOTOS ================= */
+
+.deity-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.deity{
+  position:relative;
+  min-height:245px;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.2);
+  background:#16070a;
+  box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+.deity img{
+  width:100%;
+  height:100%;
+  min-height:245px;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+
+.deity:hover img{
+  transform:scale(1.04);
+}
+
+.deity::after{
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.deity-info{
+  position:absolute;
+  z-index:2;
+  bottom:14px;
+  left:14px;
+  right:14px;
+}
+
+.deity-info strong{
+  display:block;
+  font-size:21px;
+}
+
+.deity-info small{
+  opacity:.8;
+  font-size:12px;
+}
+
+/* ================= SHAYARI ================= */
+
+.shayari{
+  text-align:center;
+  padding:10px 4px;
+  font-size:19px;
+  line-height:1.8;
+  font-weight:700;
+}
+
+.quote{
+  padding:16px;
+  margin:10px 0;
+  border-radius:18px;
+  background:rgba(255,255,255,.08);
+}
+
+/* ================= JAP COUNTER ================= */
+
+.jap{
+  text-align:center;
+}
+
+.jap-count{
+  font-size:58px;
+  font-weight:950;
+  margin:5px 0;
+}
+
+.jap-name{
+  font-size:21px;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+.jap-btn{
+  border:0;
+  padding:14px 28px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,#8d0017,#e24b00);
+  font-size:17px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* ================= NAMES ================= */
+
+.names{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.name{
+  padding:15px 10px;
+  border-radius:17px;
+  text-align:center;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.12);
+  font-weight:850;
+}
+
+/* ================= SHARE ================= */
+
+.share{
+  width:100%;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:18px;
+  padding:15px;
+  color:#fff;
+  background:rgba(255,255,255,.1);
+  font-size:16px;
+  font-weight:850;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:15px 5px 30px;
+  opacity:.65;
+  font-size:12px;
+}
+
+.footer-name{
+  font-size:15px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:520px){
+
+  main{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .topbar{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  h1{
+    font-size:56px;
+  }
 
   .brand{
-    font-size:48px;
+    letter-spacing:3px;
   }
 
+  .card{
+    padding:14px;
+    border-radius:25px;
+  }
+
+  .deity-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .deity,
+  .deity img{
+    min-height:220px;
+  }
+
+  .deity-info strong{
+    font-size:17px;
+  }
+
+  .names{
+    grid-template-columns:1fr;
+  }
+
+  .controls{
+    gap:12px;
+  }
 }
 
-@media(min-width:700px){
-
-  .app{
-    max-width:720px;
-    margin:auto;
+@media(max-width:380px){
+  .deity-grid{
+    grid-template-columns:1fr;
   }
-
 }
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<!-- TOP -->
+<div class="topbar">
 
-  <!-- TOP -->
+  <div class="live">
+    <span class="green-dot"></span>
+    LIVE • भक्ति
+  </div>
 
-  <header class="top">
-
-    <div class="time" id="time">
-      🕐
-    </div>
-
-    <!-- DIRECT YOUTUBE PLAYLIST -->
+  <div class="top-buttons">
 
     <a
-      class="youtube-btn"
+      class="circle-btn"
       href="https://youtube.com/playlist?list=PLV74Ia5Eq20Y&si=2u2Ujt58i3EBuheS"
       target="_blank"
       rel="noopener"
-      aria-label="YouTube Bhajan Playlist"
-    >
+      aria-label="YouTube Playlist">
       ▶
     </a>
 
-  </header>
+    <button
+      class="circle-btn"
+      onclick="shareSite()"
+      aria-label="Share">
+      ↗
+    </button>
+
+  </div>
+
+</div>
 
 
-  <main>
+<main>
 
-    <!-- HERO -->
+<!-- HERO -->
+<section class="hero">
 
-    <section class="hero">
+  <div class="om">ॐ</div>
 
-      <div class="om">
-        ॐ
+  <h1>भजन वाला</h1>
+
+  <div class="brand">
+    BHAKTI • BHAJAN • BHAGWAN
+  </div>
+
+  <div class="owner">
+    ✨ Anubhav Verma की भक्ति दुनिया
+  </div>
+
+  <!-- BELL -->
+  <div class="bell-wrap">
+
+    <button class="bell-btn" id="bellBtn">
+
+      🔔 घण्टी बजाओ
+
+      <small>
+        मंदिर की पवित्र घंटी
+      </small>
+
+    </button>
+
+  </div>
+
+  <!-- MANTRAS -->
+  <div class="mantras">
+
+    <div class="mantra">🔱 हर हर महादेव</div>
+
+    <div class="mantra">🙏 जय श्री राम</div>
+
+    <div class="mantra">🪷 राधे राधे</div>
+
+    <div class="mantra">🦚 जय श्री कृष्ण</div>
+
+  </div>
+
+</section>
+
+
+<!-- MUSIC -->
+<section class="card">
+
+  <div class="card-title">
+
+    <h2>🎵 आज के भजन</h2>
+
+    <span>PLAYLIST</span>
+
+  </div>
+
+
+  <div class="music-player">
+
+    <!-- YouTube API Player -->
+    <div id="youtubePlayer" class="youtube-hidden"></div>
+
+
+    <div class="now-playing">
+
+      <div class="music-icon">🎶</div>
+
+      <div class="song-label">
+        अभी चल रहा है
       </div>
-
-      <div class="brand">
-        भजन वाला
-      </div>
-
-      <div class="tagline">
-        BHAKTI • BHAJAN • BHAGWAN
-      </div>
-
-
-      <!-- BELL -->
-
-      <div class="bell-wrap">
-
-        <button
-          class="bell"
-          id="bellBtn"
-          type="button"
-        >
-
-          <div class="bell-inner">
-
-            <div class="bell-icon">
-              🔔
-            </div>
-
-            <div>
-
-              <div class="bell-title">
-                घण्टी बजाओ
-              </div>
-
-              <div class="bell-sub">
-                मंदिर की पवित्र घंटी 🔔
-              </div>
-
-            </div>
-
-          </div>
-
-        </button>
-
-      </div>
-
-
-      <!-- GOD MANTRA -->
 
       <div
-        class="mantra"
-        id="mantra"
-      >
-        🔱 हर हर महादेव
+        class="song-title"
+        id="songTitle">
+        Bhajan Playlist
       </div>
 
-    </section>
+      <div
+        class="song-status"
+        id="songStatus">
+        भक्ति संगीत
+      </div>
+
+    </div>
 
 
-    <!-- BHAJAN -->
+    <div class="progress-area">
 
-    <section class="card">
+      <input
+        class="progress"
+        id="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="0.1">
 
-      <div class="title">
+      <div class="time-row">
 
-        <h2>
-          🎵 आज के भजन
-        </h2>
+        <span id="currentTime">
+          0:00
+        </span>
 
-        <span>
-          PLAYLIST
+        <span id="duration">
+          0:00
         </span>
 
       </div>
 
-
-      <div class="player">
-
-        <iframe
-          src="https://www.youtube.com/embed/videoseries?list=PLV74Ia5Eq20Y"
-          title="Bhajan Wala Bhajan Playlist"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-        >
-        </iframe>
-
-      </div>
-
-    </section>
+    </div>
 
 
-    <!-- SHAYARI -->
-
-    <section class="card">
-
-      <div class="title">
-
-        <h2>
-          🌸 भक्ति शायरी
-        </h2>
-
-        <span>
-          मन से पढ़ें 🙏
-        </span>
-
-      </div>
-
-
-      <div class="shayari">
-
-        <div
-          class="shayari-text"
-          id="shayari"
-        >
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- GOD NAMES -->
-
-    <section class="card">
-
-      <div class="title">
-
-        <h2>
-          🛕 भगवान के नाम
-        </h2>
-
-        <span>
-          नाम जपें ❤️
-        </span>
-
-      </div>
-
-
-      <div class="names">
-
-        <div class="name">
-          🔱 ॐ नमः शिवाय
-        </div>
-
-        <div class="name">
-          🚩 जय श्री राम
-        </div>
-
-        <div class="name">
-          🪷 राधे राधे
-        </div>
-
-        <div class="name">
-          🦚 हरे कृष्ण
-        </div>
-
-        <div class="name">
-          🚩 जय बजरंगबली
-        </div>
-
-        <div class="name">
-          🌺 जय माता दी
-        </div>
-
-      </div>
-
-
-      <!-- JAP COUNTER -->
-
-      <div class="counter">
-
-        <div
-          class="counter-number"
-          id="count"
-        >
-          0
-        </div>
-
-        <div class="counter-label">
-          ॐ नमः शिवाय — नाम जाप
-        </div>
-
-        <button
-          class="jap"
-          id="jap"
-          type="button"
-        >
-          🕉️ नाम जाप करें
-        </button>
-
-      </div>
-
-
-      <!-- SHARE -->
+    <div class="controls">
 
       <button
-        class="share"
-        id="share"
-        type="button"
-      >
-        ↗️ भजन वाला शेयर करें
+        class="control"
+        id="prevBtn"
+        aria-label="Previous">
+        ⏮
       </button>
 
-    </section>
+      <button
+        class="control play"
+        id="playBtn"
+        aria-label="Play">
+        ▶
+      </button>
 
-  </main>
+      <button
+        class="control"
+        id="nextBtn"
+        aria-label="Next">
+        ⏭
+      </button>
 
-
-  <!-- FOOTER -->
-
-  <footer class="footer">
-
-    <strong>
-      Made By Anubhav Verma With Love ❤️
-    </strong>
-
-    🛕 भक्ति • भजन • भगवान
-
-  </footer>
-
-
-  <!-- BELL AUDIO -->
-
-  <audio
-    id="audio"
-    preload="auto"
-  >
-
-    <source
-      src="Mandir%20Ghanti.mp3"
-      type="audio/mpeg"
-    >
-
-  </audio>
+    </div>
 
 
-  <!-- POPUP -->
+    <div class="volume-row">
 
-  <div
-    class="popup"
-    id="popup"
-  >
+      🔊
+
+      <input
+        class="volume"
+        id="volume"
+        type="range"
+        min="0"
+        max="100"
+        value="80">
+
+    </div>
+
   </div>
+
+</section>
+
+
+<!-- DEITY PHOTOS -->
+<section class="card">
+
+  <div class="card-title">
+
+    <h2>🛕 हमारे भगवान</h2>
+
+    <span>दर्शन</span>
+
+  </div>
+
+
+  <div class="deity-grid">
+
+
+    <div class="deity">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Shiva%20statue.jpg"
+        alt="भगवान शिव"
+        loading="lazy">
+
+      <div class="deity-info">
+
+        <strong>🔱 महादेव</strong>
+
+        <small>
+          ॐ नमः शिवाय
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="deity">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Rama%20Statue%20Maharishi%20Mahesh%20Yogi%20Ramayan%20University%20Ayodhya.jpg"
+        alt="भगवान श्री राम"
+        loading="lazy">
+
+      <div class="deity-info">
+
+        <strong>🚩 श्री राम</strong>
+
+        <small>
+          जय श्री राम
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="deity">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Krishna%20statue.jpg"
+        alt="भगवान श्री कृष्ण"
+        loading="lazy">
+
+      <div class="deity-info">
+
+        <strong>🦚 श्री कृष्ण</strong>
+
+        <small>
+          राधे राधे
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="deity">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lord%20Hanuman%20statue.jpg"
+        alt="भगवान हनुमान"
+        loading="lazy">
+
+      <div class="deity-info">
+
+        <strong>🚩 हनुमान जी</strong>
+
+        <small>
+          जय बजरंगबली
+        </small>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- SHAYARI -->
+<section class="card">
+
+  <div class="card-title">
+
+    <h2>🌸 भक्ति शायरी</h2>
+
+  </div>
+
+
+  <div class="shayari">
+
+    <div class="quote">
+
+      जिसके सिर पर हाथ महादेव का हो,<br>
+      उसे डर कैसा और चिंता कैसी। 🔱
+
+    </div>
+
+    <div class="quote">
+
+      नाम प्रभु का लेते रहो,<br>
+      मन में प्रेम जगाते रहो। 🙏
+
+    </div>
+
+    <div class="quote">
+
+      कर्म करते रहो,<br>
+      बाकी सब महादेव पर छोड़ दो। 🕉️
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- JAP -->
+<section class="card">
+
+  <div class="jap">
+
+    <div class="card-title">
+
+      <h2>🙏 नाम जाप</h2>
+
+    </div>
+
+    <div
+      class="jap-count"
+      id="japCount">
+      0
+    </div>
+
+    <div class="jap-name">
+      ॐ नमः शिवाय 🔱
+    </div>
+
+    <button
+      class="jap-btn"
+      onclick="increaseJap()">
+      🙏 जाप करें
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- NAMES -->
+<section class="card">
+
+  <div class="card-title">
+
+    <h2>🕉️ भगवान के नाम</h2>
+
+  </div>
+
+
+  <div class="names">
+
+    <div class="name">🔱 ॐ नमः शिवाय</div>
+
+    <div class="name">🙏 श्री राम जय राम</div>
+
+    <div class="name">🪷 राधे राधे</div>
+
+    <div class="name">🦚 हरे कृष्ण</div>
+
+    <div class="name">🚩 जय बजरंगबली</div>
+
+    <div class="name">🌺 जय माता दी</div>
+
+  </div>
+
+</section>
+
+
+<!-- SHARE -->
+<section class="card">
+
+  <button
+    class="share"
+    onclick="shareSite()">
+
+    📤 Bhajan Wala को Share करें
+
+  </button>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-name">
+    🛕 Bhajan Wala
+  </div>
+
+  <div>
+    © Anubhav Verma • भक्ति और भजन के साथ ❤️
+  </div>
+
+</footer>
+
+</main>
+
+
+<!-- BELL AUDIO -->
+<audio
+  id="bellAudio"
+  preload="auto">
+
+  <source
+    src="Mandir%20Ghanti.mp3"
+    type="audio/mpeg">
+
+</audio>
 
 
 <script>
 
-/* =========================
-   CLOCK
-========================= */
+/* =====================================================
+   YOUTUBE PLAYLIST
+   ===================================================== */
+
+const PLAYLIST_ID = "PLV74Ia5Eq20Y";
+
+let player;
+let playerReady = false;
+let timer;
+
+
+/* Load YouTube IFrame API */
+
+const tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+
+document.head.appendChild(tag);
+
+
+/* YouTube creates player here */
+
+function onYouTubeIframeAPIReady(){
+
+  player = new YT.Player("youtubePlayer",{
+
+    height:"1",
+    width:"1",
+
+    playerVars:{
+      listType:"playlist",
+      list:PLAYLIST_ID,
+      playsinline:1,
+      rel:0
+    },
+
+    events:{
+      onReady:onPlayerReady,
+      onStateChange:onPlayerStateChange
+    }
+
+  });
+
+}
+
+
+/* Player ready */
+
+function onPlayerReady(){
+
+  playerReady = true;
+
+  player.setVolume(80);
+
+  updateSong();
+
+  startTimer();
+
+}
+
+
+/* Player state */
+
+function onPlayerStateChange(event){
+
+  if(event.data === YT.PlayerState.PLAYING){
+
+    document.getElementById("playBtn").textContent = "⏸";
+
+    document.getElementById("songStatus").textContent =
+      "▶ अभी बज रहा है";
+
+    startTimer();
+
+  }
+
+  else if(event.data === YT.PlayerState.PAUSED){
+
+    document.getElementById("playBtn").textContent = "▶";
+
+    document.getElementById("songStatus").textContent =
+      "⏸ रुका हुआ है";
+
+  }
+
+  else if(event.data === YT.PlayerState.ENDED){
+
+    document.getElementById("playBtn").textContent = "▶";
+
+    document.getElementById("songStatus").textContent =
+      "भजन समाप्त";
+
+    updateSong();
+
+  }
+
+}
+
+
+/* Play / Pause */
+
+document.getElementById("playBtn").addEventListener("click",function(){
+
+  if(!playerReady) return;
+
+  const state = player.getPlayerState();
+
+  if(state === YT.PlayerState.PLAYING){
+
+    player.pauseVideo();
+
+  }else{
+
+    player.playVideo();
+
+  }
+
+});
+
+
+/* Previous */
+
+document.getElementById("prevBtn").addEventListener("click",function(){
+
+  if(!playerReady) return;
+
+  player.previousVideo();
+
+  setTimeout(updateSong,700);
+
+});
+
+
+/* Next */
+
+document.getElementById("nextBtn").addEventListener("click",function(){
+
+  if(!playerReady) return;
+
+  player.nextVideo();
+
+  setTimeout(updateSong,700);
+
+});
+
+
+/* Volume */
+
+document.getElementById("volume").addEventListener("input",function(){
+
+  if(playerReady){
+
+    player.setVolume(Number(this.value));
+
+  }
+
+});
+
+
+/* Progress */
+
+document.getElementById("progress").addEventListener("input",function(){
+
+  if(!playerReady) return;
+
+  const duration = player.getDuration();
+
+  if(duration){
+
+    player.seekTo(
+      duration * (Number(this.value)/100),
+      true
+    );
+
+  }
+
+});
+
+
+/* Update song title */
+
+function updateSong(){
+
+  if(!playerReady) return;
+
+  try{
+
+    const data = player.getVideoData();
+
+    if(data && data.title){
+
+      document.getElementById("songTitle").textContent =
+        data.title;
+
+    }
+
+  }catch(e){}
+
+}
+
+
+/* Timer */
+
+function startTimer(){
+
+  clearInterval(timer);
+
+  timer = setInterval(function(){
+
+    if(!playerReady) return;
+
+    try{
+
+      const current = player.getCurrentTime() || 0;
+      const duration = player.getDuration() || 0;
+
+      if(duration > 0){
+
+        const percentage =
+          (current/duration)*100;
+
+        document.getElementById("progress").value =
+          percentage;
+
+        document.getElementById("currentTime").textContent =
+          formatTime(current);
+
+        document.getElementById("duration").textContent =
+          formatTime(duration);
+
+      }
+
+      updateSong();
+
+    }catch(e){}
+
+  },500);
+
+}
+
+
+/* Format time */
+
+function formatTime(seconds){
+
+  seconds = Math.floor(seconds || 0);
+
+  const min = Math.floor(seconds/60);
+
+  const sec = seconds % 60;
+
+  return min + ":" + String(sec).padStart(2,"0");
+
+}
+
+
+/* =====================================================
+   BELL
+   ===================================================== */
+
+document.getElementById("bellBtn").addEventListener("click",function(){
+
+  const audio = document.getElementById("bellAudio");
+
+  audio.currentTime = 0;
+
+  audio.play().catch(function(){
+
+    alert(
+      "Mandir Ghanti.mp3 file nahi mil rahi."
+    );
+
+  });
+
+});
+
+
+/* =====================================================
+   TIME
+   ===================================================== */
 
 function updateTime(){
 
-  document.getElementById("time").textContent =
-    new Date().toLocaleTimeString(
+  const now = new Date();
+
+  const time =
+    now.toLocaleTimeString(
       "en-IN",
       {
         hour:"numeric",
@@ -923,322 +1288,85 @@ function updateTime(){
 
 }
 
-updateTime();
 
-setInterval(
-  updateTime,
-  30000
+/* =====================================================
+   JAP COUNTER
+   ===================================================== */
+
+let jap = Number(
+  localStorage.getItem("bhajanWalaJap") || 0
 );
 
+document.getElementById("japCount").textContent = jap;
 
-/* =========================
-   POPUP
-========================= */
 
-function showPopup(text){
+function increaseJap(){
 
-  const popup =
-    document.getElementById("popup");
+  jap++;
 
-  popup.textContent = text;
-
-  popup.classList.add("show");
-
-  setTimeout(
-    function(){
-
-      popup.classList.remove("show");
-
-    },
-    1600
+  localStorage.setItem(
+    "bhajanWalaJap",
+    jap
   );
+
+  document.getElementById("japCount").textContent =
+    jap;
 
 }
 
 
-/* =========================
-   BELL
-========================= */
+/* =====================================================
+   SHARE
+   ===================================================== */
 
-const bellBtn =
-  document.getElementById("bellBtn");
+async function shareSite(){
 
-const bellAudio =
-  document.getElementById("audio");
+  const shareData = {
+
+    title:"Bhajan Wala 🛕",
+
+    text:
+      "🛕 Bhajan Wala पर भजन, भक्ति और भगवान के नाम सुनो 🙏",
+
+    url:window.location.href
+
+  };
 
 
-bellBtn.addEventListener(
-  "click",
-  function(){
+  if(navigator.share){
 
-    bellBtn.classList.remove("ring");
+    try{
 
-    void bellBtn.offsetWidth;
+      await navigator.share(shareData);
 
-    bellBtn.classList.add("ring");
+    }catch(e){}
 
-    bellAudio.currentTime = 0;
+  }else{
 
-    bellAudio.play()
+    try{
 
-      .then(
-        function(){
-
-          showPopup(
-            "🔔 घंटी बज गई 🙏"
-          );
-
-        }
-      )
-
-      .catch(
-        function(){
-
-          showPopup(
-            "घंटी की MP3 नहीं मिली"
-          );
-
-        }
+      await navigator.clipboard.writeText(
+        window.location.href
       );
+
+      alert("Website link copy हो गया 🙏");
+
+    }catch(e){
+
+      alert("Website link share करें 🙏");
+
+    }
 
   }
-);
-
-
-/* =========================
-   MANTRA FADE
-========================= */
-
-const mantras = [
-
-  "🔱 हर हर महादेव",
-
-  "🕉️ ॐ नमः शिवाय",
-
-  "🚩 जय श्री राम",
-
-  "🪷 राधे राधे",
-
-  "🦚 जय श्री कृष्ण",
-
-  "🌺 जय माता दी",
-
-  "🙏 जय बजरंगबली",
-
-  "🌸 सीता राम",
-
-  "🛕 श्री गणेशाय नमः"
-
-];
-
-let mantraIndex = 0;
-
-const mantra =
-  document.getElementById("mantra");
-
-
-function changeMantra(){
-
-  mantra.classList.remove("fade");
-
-  void mantra.offsetWidth;
-
-  mantra.classList.add("fade");
-
-  setTimeout(
-    function(){
-
-      mantraIndex =
-        (mantraIndex + 1)
-        % mantras.length;
-
-      mantra.textContent =
-        mantras[mantraIndex];
-
-    },
-    1200
-  );
-
-}
-
-mantra.classList.add("fade");
-
-setInterval(
-  changeMantra,
-  4200
-);
-
-
-/* =========================
-   SHAYARI FADE
-========================= */
-
-const shayaris = [
-
-  "जिसके सिर पर हाथ महादेव का हो,<br>उसे डर कैसा और चिंता कैसी। 🔱",
-
-  "भरोसा रखो उस भगवान पर,<br>जो रास्ते बंद नहीं, मंज़िलें बदलता है। 🙏",
-
-  "जहाँ श्रद्धा होती है,<br>वहीं भगवान की अनुभूति होती है। 🛕",
-
-  "नाम प्रभु का लेते रहो,<br>मन में प्रेम जगाते रहो। ❤️",
-
-  "सच्चे मन से जो भगवान को पुकारता है,<br>वो कभी अकेला नहीं रहता। 🌸",
-
-  "कर्म करते रहो,<br>बाकी सब महादेव पर छोड़ दो। 🔱",
-
-  "राधे नाम में ऐसी मिठास है,<br>जो मन को हर पल सुकून देती है। 🪷",
-
-  "राम नाम का सहारा हो,<br>तो हर मुश्किल किनारा हो। 🚩"
-
-];
-
-let shayariIndex = 0;
-
-const shayari =
-  document.getElementById("shayari");
-
-
-function changeShayari(){
-
-  shayari.classList.add("hide");
-
-  setTimeout(
-    function(){
-
-      shayari.innerHTML =
-        shayaris[shayariIndex];
-
-      shayari.classList.remove("hide");
-
-    },
-    350
-  );
 
 }
 
 
-changeShayari();
+/* Initial */
 
-setInterval(
-  function(){
-
-    shayariIndex =
-      (shayariIndex + 1)
-      % shayaris.length;
-
-    changeShayari();
-
-  },
-  5200
-);
-
-
-/* =========================
-   NAAM JAP COUNTER
-========================= */
-
-let count =
-  Number(
-    localStorage.getItem(
-      "bhajan-jap"
-    ) || 0
-  );
-
-
-const countElement =
-  document.getElementById("count");
-
-countElement.textContent =
-  count;
-
-
-document
-  .getElementById("jap")
-  .addEventListener(
-    "click",
-    function(){
-
-      count++;
-
-      countElement.textContent =
-        count;
-
-      localStorage.setItem(
-        "bhajan-jap",
-        count
-      );
-
-      showPopup(
-        "🕉️ ॐ नमः शिवाय • " + count
-      );
-
-    }
-  );
-
-
-/* =========================
-   SHARE
-========================= */
-
-document
-  .getElementById("share")
-  .addEventListener(
-    "click",
-    async function(){
-
-      if(
-        navigator.share
-      ){
-
-        try{
-
-          await navigator.share({
-
-            title:
-              "भजन वाला 🛕",
-
-            text:
-              "भजन, भक्ति और भगवान के नाम के साथ जुड़ो 🙏",
-
-            url:
-              location.href
-
-          });
-
-        }catch(e){}
-
-      }
-
-      else{
-
-        try{
-
-          await navigator.clipboard
-            .writeText(
-              location.href
-            );
-
-          showPopup(
-            "🔗 Website link copy हो गया"
-          );
-
-        }catch(e){
-
-          showPopup(
-            location.href
-          );
-
-        }
-
-      }
-
-    }
-  );
+updateTime();
 
 </script>
-
-</div>
 
 </body>
 </html>
