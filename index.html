@@ -648,6 +648,216 @@ main{
 }
 
 /* =========================
+   CUSTOM PLAYLIST PANEL
+========================= */
+
+.playlist-overlay{
+  position:fixed;
+  inset:0;
+
+  z-index:10000;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+
+  background:rgba(0,0,0,.62);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+
+  opacity:0;
+  visibility:hidden;
+
+  pointer-events:none;
+
+  transition:
+    opacity .25s ease,
+    visibility .25s ease;
+}
+
+.playlist-overlay.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.playlist-sheet{
+  width:min(700px,100%);
+
+  max-height:72vh;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:15px 14px 18px;
+
+  border-radius:26px 26px 0 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #210207,
+      #43050d 55%,
+      #610913
+    );
+
+  border:1px solid rgba(255,255,255,.2);
+  border-bottom:0;
+
+  box-shadow:
+    0 -18px 60px rgba(0,0,0,.45);
+
+  transform:translateY(100%);
+
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.playlist-overlay.show .playlist-sheet{
+  transform:translateY(0);
+}
+
+.playlist-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:2px 4px 13px;
+}
+
+.playlist-heading{
+  font-size:21px;
+  font-weight:900;
+}
+
+.playlist-close{
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.18);
+
+  color:#fff;
+
+  background:rgba(255,255,255,.08);
+
+  cursor:pointer;
+
+  font-size:21px;
+
+  transition:.15s;
+}
+
+.playlist-close:active{
+  transform:scale(.9);
+}
+
+.playlist-list{
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+
+  padding:2px 2px 4px;
+}
+
+.playlist-item{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:9px;
+
+  margin-bottom:8px;
+
+  border-radius:17px;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  color:#fff;
+
+  background:rgba(255,255,255,.055);
+
+  text-align:left;
+
+  cursor:pointer;
+
+  transition:
+    transform .15s ease,
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.playlist-item:active{
+  transform:scale(.98);
+}
+
+.playlist-item.active{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,170,0,.2),
+      rgba(255,60,0,.15)
+    );
+
+  border-color:rgba(255,170,0,.55);
+}
+
+.playlist-thumb{
+  width:68px;
+  height:48px;
+
+  flex:0 0 68px;
+
+  object-fit:cover;
+
+  border-radius:10px;
+
+  background:#130307;
+
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.playlist-text{
+  min-width:0;
+  flex:1;
+}
+
+.playlist-title{
+  font-size:14px;
+  font-weight:800;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.playlist-number{
+  margin-top:3px;
+
+  font-size:11px;
+
+  color:rgba(255,255,255,.55);
+}
+
+.playlist-loading{
+  padding:30px 10px;
+
+  text-align:center;
+
+  color:rgba(255,255,255,.65);
+
+  font-size:14px;
+}
+
+/* =========================
    GOD CARDS
 ========================= */
 
@@ -1044,6 +1254,10 @@ footer{
 
   .footer-by{
     font-size:15px;
+  }
+
+  .playlist-sheet{
+    max-height:76vh;
   }
 }
 
@@ -1612,6 +1826,49 @@ footer{
 
 
 <!-- =========================
+     CUSTOM PLAYLIST PANEL
+========================= -->
+
+<div
+  class="playlist-overlay"
+  id="playlistOverlay">
+
+  <div
+    class="playlist-sheet"
+    id="playlistSheet">
+
+    <div class="playlist-head">
+
+      <div class="playlist-heading">
+        🎵 Bhajan Playlist
+      </div>
+
+      <button
+        class="playlist-close"
+        id="playlistClose"
+        type="button"
+        aria-label="Close Playlist">
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="playlist-list"
+      id="playlistList">
+
+      <div class="playlist-loading">
+        🙏 Playlist load ho rahi hai...
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
      TOAST
 ========================= -->
 
@@ -1774,6 +2031,10 @@ let isShuffled = false;
 let progressTimer = null;
 
 
+/*
+  YouTube API automatically calls this.
+*/
+
 function onYouTubeIframeAPIReady(){
 
   player =
@@ -1825,6 +2086,16 @@ function onPlayerReady(event){
 
   updateProgress();
 
+  /*
+    Playlist panel ke liye YouTube playlist
+    IDs available hone ka wait.
+  */
+
+  setTimeout(
+    buildCustomPlaylist,
+    700
+  );
+
 }
 
 
@@ -1863,6 +2134,8 @@ function updateVideoInfo(){
 
   document.getElementById("coverImage")
     .src = thumb;
+
+  updateActivePlaylistItem();
 
 }
 
@@ -2003,20 +2276,312 @@ document
 
 
 /* =====================================================
-   OPEN PLAYLIST
+   CUSTOM PLAYLIST PANEL
 ===================================================== */
 
-document
-  .getElementById("playlistBtn")
-  .addEventListener("click",()=>{
+const playlistOverlay =
+  document.getElementById("playlistOverlay");
 
-    window.open(
-      PLAYLIST_URL,
-      "_blank",
-      "noopener"
+const playlistSheet =
+  document.getElementById("playlistSheet");
+
+const playlistList =
+  document.getElementById("playlistList");
+
+const playlistClose =
+  document.getElementById("playlistClose");
+
+const playlistBtn =
+  document.getElementById("playlistBtn");
+
+
+/*
+  Playlist button ab direct YouTube nahi kholega.
+  Ye website ke andar custom panel kholega.
+*/
+
+playlistBtn.addEventListener("click",()=>{
+
+  playlistOverlay.classList.add("show");
+
+  document.body.style.overflow = "hidden";
+
+  if(playerReady){
+
+    buildCustomPlaylist();
+
+  }
+
+});
+
+
+/*
+  Close button
+*/
+
+playlistClose.addEventListener("click",closePlaylist);
+
+
+/*
+  Background par tap karne se bhi close.
+*/
+
+playlistOverlay.addEventListener("click",(event)=>{
+
+  if(event.target === playlistOverlay){
+
+    closePlaylist();
+
+  }
+
+});
+
+
+function closePlaylist(){
+
+  playlistOverlay.classList.remove("show");
+
+  document.body.style.overflow = "";
+
+}
+
+
+/*
+  ESC support
+*/
+
+document.addEventListener("keydown",(event)=>{
+
+  if(event.key === "Escape"){
+
+    closePlaylist();
+
+  }
+
+});
+
+
+/* =====================================================
+   BUILD CUSTOM PLAYLIST
+===================================================== */
+
+let playlistBuilt = false;
+
+function buildCustomPlaylist(){
+
+  if(!playerReady) return;
+
+  let ids = [];
+
+  try{
+
+    ids = player.getPlaylist() || [];
+
+  }catch(e){
+
+    ids = [];
+
+  }
+
+
+  if(!ids.length){
+
+    playlistList.innerHTML = `
+      <div class="playlist-loading">
+        🙏 Playlist abhi load ho rahi hai...
+      </div>
+    `;
+
+    setTimeout(
+      buildCustomPlaylist,
+      1000
     );
 
+    return;
+
+  }
+
+
+  playlistBuilt = true;
+
+  playlistList.innerHTML = "";
+
+
+  ids.forEach((videoId,index)=>{
+
+    const item =
+      document.createElement("button");
+
+    item.type = "button";
+
+    item.className =
+      "playlist-item";
+
+    item.dataset.videoId =
+      videoId;
+
+    item.dataset.index =
+      index;
+
+
+    const thumb =
+      document.createElement("img");
+
+    thumb.className =
+      "playlist-thumb";
+
+    thumb.src =
+      "https://i.ytimg.com/vi/" +
+      videoId +
+      "/mqdefault.jpg";
+
+    thumb.alt =
+      "Bhajan " + (index + 1);
+
+
+    const text =
+      document.createElement("div");
+
+    text.className =
+      "playlist-text";
+
+
+    const title =
+      document.createElement("div");
+
+    title.className =
+      "playlist-title";
+
+    title.textContent =
+      "Bhajan " + (index + 1);
+
+
+    const number =
+      document.createElement("div");
+
+    number.className =
+      "playlist-number";
+
+    number.textContent =
+      "Bhajan " + (index + 1);
+
+
+    text.appendChild(title);
+
+    text.appendChild(number);
+
+    item.appendChild(thumb);
+
+    item.appendChild(text);
+
+
+    item.addEventListener(
+      "click",
+      ()=>{
+
+        if(!playerReady) return;
+
+        /*
+          Selected playlist item ko
+          current YouTube playlist item se load.
+        */
+
+        player.playVideoAt(index);
+
+        /*
+          Cover par wapas nahi le ja rahe.
+          User song choose karta hai to
+          video playback continue hoga.
+        */
+
+        mediaFlipper.classList.add(
+          "show-video"
+        );
+
+        setTimeout(
+          updateVideoInfo,
+          300
+        );
+
+        closePlaylist();
+
+      }
+    );
+
+
+    playlistList.appendChild(item);
+
   });
+
+
+  updateActivePlaylistItem();
+
+}
+
+
+/* =====================================================
+   ACTIVE PLAYLIST ITEM
+===================================================== */
+
+function updateActivePlaylistItem(){
+
+  if(!playlistBuilt || !playerReady) return;
+
+  let currentId = "";
+
+  try{
+
+    const data =
+      player.getVideoData();
+
+    if(data){
+
+      currentId =
+        data.video_id || "";
+
+    }
+
+  }catch(e){
+
+    return;
+
+  }
+
+
+  document
+    .querySelectorAll(".playlist-item")
+    .forEach(item=>{
+
+      if(
+        item.dataset.videoId === currentId
+      ){
+
+        item.classList.add("active");
+
+      }else{
+
+        item.classList.remove("active");
+
+      }
+
+    });
+
+}
+
+
+/* =====================================================
+   OPEN PLAYLIST
+   TOP BUTTON SAME AS BEFORE
+===================================================== */
+
+/*
+  IMPORTANT:
+  Upar wala YouTube button (#youtube-top)
+  intentionally direct YouTube playlist hi kholta hai.
+
+  Sirf player ke andar wala playlist button
+  custom in-page playlist kholta hai.
+*/
 
 
 /* =====================================================
@@ -2077,6 +2642,7 @@ function formatTime(seconds){
       .padStart(2,"0");
 
   return minutes + ":" + secs;
+
 }
 
 
@@ -2102,6 +2668,7 @@ function updateProgress(){
 
   }
 
+
   if(duration > 0){
 
     const percent =
@@ -2111,6 +2678,7 @@ function updateProgress(){
       percent + "%";
 
   }
+
 
   currentTimeEl.textContent =
     formatTime(current);
